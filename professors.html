@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Pick Professors — Your College GPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#F7F4EF;--surface:#FFFFFF;--border:#E4DDD3;--border-lt:#EDE8E2;
+  --text:#1A1714;--text-2:#6B6560;--text-3:#9E9891;
+  --accent:#BF4C00;--accent-lt:#FAECE7;--accent-dk:#9A3D00;
+  --font-disp:'Syne',sans-serif;--font-body:'Inter',sans-serif;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.04);
+  --shadow:0 2px 6px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:58px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo{width:38px;height:38px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.nav-name{font-family:var(--font-disp);font-size:15px;font-weight:800;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);text-decoration:none;transition:background .15s,color .15s}
+.nav-link:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:5px;cursor:pointer;border:none;background:none;font-family:var(--font-body);transition:background .15s,color .15s}
+.nav-dropdown-btn:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown-btn.active-dd{font-weight:600;color:var(--accent)}
+.nav-dropdown-btn i.ti-chevron-down{font-size:12px;transition:transform .2s}
+.nav-dropdown-btn.open i.ti-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,.1);min-width:220px;padding:6px;z-index:300;display:none}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius-sm);text-decoration:none;color:var(--text-2);font-size:13px;transition:background .12s,color .12s}
+.nav-dropdown-item:hover{background:var(--accent-lt);color:var(--accent)}
+.nav-dropdown-item.active-item{color:var(--accent);font-weight:600;background:var(--accent-lt)}
+.nav-dropdown-item i{font-size:15px;color:var(--accent);flex-shrink:0}
+.hero{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 2rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:999px;padding:5px 14px;margin-bottom:1.25rem}
+.hero h1{font-family:var(--font-disp);font-size:clamp(24px,4vw,40px);font-weight:800;color:var(--text);line-height:1.1;margin-bottom:.75rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:15px;color:var(--text-2);line-height:1.7;max-width:580px}
+.content{max-width:900px;margin:0 auto;padding:0 1.5rem 4rem}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;margin-top:2.5rem}
+.section-eyebrow:first-child{margin-top:0}
+.section-title{font-family:var(--font-disp);font-size:clamp(18px,2.5vw,24px);font-weight:800;color:var(--text);margin-bottom:.625rem}
+.section-sub{font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:1.5rem}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.tip-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.tip-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.tip-card h3 i{color:var(--accent);font-size:16px;flex-shrink:0}
+.tip-card p{font-size:12.5px;color:var(--text-2);line-height:1.65}
+.check-list{display:flex;flex-direction:column;gap:8px;margin-bottom:2rem}
+.check-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.125rem;display:flex;align-items:flex-start;gap:12px}
+.check-dot{width:22px;height:22px;background:var(--accent-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-dot i{font-size:12px;color:var(--accent)}
+.check-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.check-desc{font-size:12px;color:var(--text-3);line-height:1.55}
+.mistake-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.mistake-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;border-left:3px solid #DC2626}
+.mistake-card h3{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:7px}
+.mistake-card h3 i{color:#DC2626;font-size:15px;flex-shrink:0}
+.mistake-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+.fix-box{font-size:11.5px;color:#059669;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:var(--radius-sm);padding:.5rem .75rem;margin-top:.75rem;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.fix-box i{font-size:12px;flex-shrink:0;margin-top:1px}
+.timeline{display:flex;flex-direction:column;gap:0;margin-bottom:2rem}
+.tl-item{display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--border-lt)}
+.tl-item:last-child{border-bottom:none}
+.tl-when{font-size:11px;font-weight:700;color:var(--accent);min-width:90px;flex-shrink:0;padding-top:3px}
+.tl-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tl-desc{font-size:12px;color:var(--text-2);line-height:1.55}
+.cta-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;box-shadow:var(--shadow);margin-bottom:2rem}
+.cta-box h2{font-family:var(--font-disp);font-size:20px;font-weight:800;color:var(--text);margin-bottom:.5rem}
+.cta-box p{font-size:13px;color:var(--text-2);line-height:1.65;margin-bottom:1.25rem}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:13px;font-weight:600;padding:10px 20px;border-radius:var(--radius-md);text-decoration:none;border:none;cursor:pointer;transition:all .15s}
+.btn-primary{background:var(--accent);color:white}
+.btn-primary:hover{background:var(--accent-dk)}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border);margin-left:8px}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.footer-disc{max-width:900px;margin:0 auto 1rem;padding:0 1.5rem}
+.footer-disc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.875rem 1.125rem;display:flex;align-items:flex-start;gap:9px}
+.fdisc-icon{font-size:15px;color:var(--text-3);flex-shrink:0;margin-top:1px}
+.fdisc-text{font-size:11.5px;color:var(--text-3);line-height:1.65}
+.footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center}
+.footer p{font-size:12px;color:var(--text-3)}
+.footer a{color:var(--accent);text-decoration:none}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .tips-grid,.mistake-grid{grid-template-columns:1fr}
+  .hero,.content,.footer-disc{padding-left:1rem;padding-right:1rem}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-brand" href="welcome.html">
+    <img class="nav-logo" src="favicon.ico" alt="Your College GPS logo">
+    <span class="nav-name">Your College GPS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="about.html">About us</a>
+    <div class="nav-dropdown" id="nav-gi">
+      <button class="nav-dropdown-btn" onclick="toggleGiMenu()" id="gi-btn">
+        Getting in <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="gi-menu">
+        <a class="nav-dropdown-item" href="sat.html"><i class="ti ti-pencil" aria-hidden="true"></i>SAT Prep</a>
+        <a class="nav-dropdown-item" href="act.html"><i class="ti ti-pencil" aria-hidden="true"></i>ACT Prep</a>
+        <a class="nav-dropdown-item" href="gpa.html"><i class="ti ti-calculator" aria-hidden="true"></i>GPA Calculator</a>
+        <a class="nav-dropdown-item" href="#" style="opacity:.5;pointer-events:none"><i class="ti ti-users" aria-hidden="true"></i>Extracurriculars</a>
+        <a class="nav-dropdown-item" href="#" style="opacity:.5;pointer-events:none"><i class="ti ti-file-text" aria-hidden="true"></i>Essays</a>
+        <a class="nav-dropdown-item" href="#" style="opacity:.5;pointer-events:none"><i class="ti ti-receipt" aria-hidden="true"></i>Financial Aid</a>
+      </div>
+    </div>
+    <div class="nav-dropdown" id="nav-campus">
+      <button class="nav-dropdown-btn active-dd" onclick="toggleCampusMenu()" id="campus-btn">
+        Thriving on campus <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="campus-menu">
+        <a class="nav-dropdown-item" href="welcome.html#states"><i class="ti ti-calendar-check" aria-hidden="true"></i>Orientation checklist</a>
+        <a class="nav-dropdown-item active-item" href="professors.html"><i class="ti ti-user" aria-hidden="true"></i>How to pick professors</a>
+        <a class="nav-dropdown-item " href="adddrop.html"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Navigate add/drop</a>
+        <a class="nav-dropdown-item " href="build-gpa.html"><i class="ti ti-chart-line" aria-hidden="true"></i>Build your GPA</a>
+        <a class="nav-dropdown-item " href="internships.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Find internships</a>
+        <a class="nav-dropdown-item " href="campus-resources.html"><i class="ti ti-building" aria-hidden="true"></i>Campus resources</a>
+        <a class="nav-dropdown-item " href="mistakes.html"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Common freshman mistakes</a>
+      </div>
+    </div>
+    <a class="nav-link" href="welcome.html#covered">What's covered</a>
+    <a class="nav-link" href="welcome.html#feedback">Feedback</a>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-eyebrow"><i class="ti ti-school" aria-hidden="true"></i> Thriving on campus</div>
+  <h1>How to pick <em>the right professors.</em></h1>
+  <p>The professor matters more than the time slot. A great professor makes a hard class manageable. A bad one makes an easy class miserable. Here is how to research before you register.</p>
+</header>
+<div class="content">
+
+<div class="tips-grid">
+  <div class="tip-card"><h3><i class="ti ti-star"></i>Start with RateMyProfessors</h3><p>Go to ratemyprofessors.com and search your school. Read reviews critically — look for patterns across multiple students, not just one or two. Pay attention to comments about clarity, grading fairness, and availability outside class.</p></div>
+  <div class="tip-card"><h3><i class="ti ti-file-description"></i>Check your school's own evaluations</h3><p>Most universities publish student course evaluations through their own portal. These are more structured and reliable than third-party sites. Search your school's name plus "course instructor survey" or "student evaluations."</p></div>
+  <div class="tip-card"><h3><i class="ti ti-users"></i>Ask current students directly</h3><p>Reddit communities for your school (r/UTDallas, r/UTAustin, etc.) have honest, recent professor reviews. Ask specifically about the course level you are taking — a professor great at 200-level may be brutal at 300-level.</p></div>
+  <div class="tip-card"><h3><i class="ti ti-calendar"></i>Attend the first class before committing</h3><p>Most schools allow you to sit in on a class during add/drop without being enrolled. Attend the first session of any class you are unsure about. You will know within 20 minutes whether the teaching style works for you.</p></div>
+  <div class="tip-card"><h3><i class="ti ti-book"></i>Read the syllabus before registering</h3><p>Many professors post syllabi online before the semester starts. Search your school's course schedule for a link, or email the department. Knowing the grading breakdown and workload before you register is a real advantage.</p></div>
+  <div class="tip-card"><h3><i class="ti ti-chart-bar"></i>Look up grade distributions</h3><p>Some schools publish historical grade distributions by professor and course. Search your school's name plus "grade distribution" — UT Austin, Texas A&M, and several others make this public. A class with 80% A's and one with 30% are very different experiences.</p></div>
+</div>
+<div class="cta-box">
+  <h2>Ready to register?</h2>
+  <p>Use our orientation checklist to make sure you have completed all the steps before your first registration date.</p>
+  <a class="btn btn-primary" href="welcome.html#states"><i class="ti ti-map-pin"></i>Open orientation checklist</a>
+  <a class="btn btn-ghost" href="adddrop.html">Navigate add/drop</a>
+</div>
+
+</div>
+<div class="footer-disc">
+  <div class="footer-disc-box">
+    <i class="ti ti-info-circle fdisc-icon" aria-hidden="true"></i>
+    <p class="fdisc-text">Your College GPS is an independent student-built resource not affiliated with or endorsed by any university. Advice is general in nature. Always verify specific policies with your academic advisor or registrar. &copy; 2026 Your College GPS.</p>
+  </div>
+</div>
+<footer class="footer">
+  <p><a href="welcome.html">Your College GPS</a> &middot; <a href="campus.html">Thriving on campus</a> &middot; <a href="about.html">About us</a> &middot; Not affiliated with any university &middot; 2026</p>
+</footer>
+<script>
+function toggleGiMenu(){var b=document.getElementById('gi-btn'),m=document.getElementById('gi-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+function toggleCampusMenu(){var b=document.getElementById('campus-btn'),m=document.getElementById('campus-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+document.addEventListener('click',function(e){
+  ['gi','campus'].forEach(function(id){
+    var dd=document.getElementById('nav-'+id);
+    if(dd&&!dd.contains(e.target)){var b=document.getElementById(id+'-btn'),m=document.getElementById(id+'-menu');if(b)b.classList.remove('open');if(m)m.classList.remove('open');}
+  });
+});
+</script>
+</body>
+</html>
