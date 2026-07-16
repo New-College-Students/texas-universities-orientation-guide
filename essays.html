@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Essays Guide — Your College GPS</title>
+<meta name="description" content="A complete guide to writing the Common App personal statement and supplemental essays. All 7 prompts explained, what to avoid, and how to write an essay that actually stands out.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#F7F4EF;--surface:#FFFFFF;--border:#E4DDD3;--border-lt:#EDE8E2;
+  --text:#1A1714;--text-2:#6B6560;--text-3:#9E9891;
+  --accent:#BF4C00;--accent-lt:#FAECE7;--accent-dk:#9A3D00;
+  --font-disp:'Syne',sans-serif;--font-body:'Inter',sans-serif;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.04);
+  --shadow:0 2px 6px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:58px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo{width:38px;height:38px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.nav-name{font-family:var(--font-disp);font-size:15px;font-weight:800;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);text-decoration:none;transition:background .15s,color .15s}
+.nav-link:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:5px;cursor:pointer;border:none;background:none;font-family:var(--font-body);transition:background .15s,color .15s}
+.nav-dropdown-btn:hover,.nav-dropdown-btn.active-dd{background:var(--border-lt);color:var(--text)}
+.nav-dropdown-btn.active-dd{font-weight:600;color:var(--accent)}
+.nav-dropdown-btn i.ti-chevron-down{font-size:12px;transition:transform .2s}
+.nav-dropdown-btn.open i.ti-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,.1);min-width:220px;padding:6px;z-index:300;display:none}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius-sm);text-decoration:none;color:var(--text-2);font-size:13px;transition:background .12s,color .12s}
+.nav-dropdown-item:hover{background:var(--accent-lt);color:var(--accent)}
+.nav-dropdown-item.active-item{color:var(--accent);font-weight:600;background:var(--accent-lt)}
+.nav-dropdown-item i{font-size:15px;color:var(--accent);flex-shrink:0}
+
+.hero{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 2rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:999px;padding:5px 14px;margin-bottom:1.25rem}
+.hero h1{font-family:var(--font-disp);font-size:clamp(26px,4.5vw,42px);font-weight:800;color:var(--text);line-height:1.1;margin-bottom:.875rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:15px;color:var(--text-2);line-height:1.7;max-width:600px}
+
+.content{max-width:900px;margin:0 auto;padding:0 1.5rem 4rem}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;margin-top:3rem}
+.section-label:first-child{margin-top:0}
+.section-title{font-family:var(--font-disp);font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--text);margin-bottom:.75rem}
+.section-sub{font-size:14px;color:var(--text-2);line-height:1.7;max-width:640px;margin-bottom:1.75rem}
+
+/* PROMPTS */
+.prompts-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:2rem}
+.prompt-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.prompt-head{display:flex;align-items:flex-start;gap:12px;padding:1.125rem;cursor:pointer;transition:background .12s}
+.prompt-head:hover{background:var(--bg)}
+.prompt-num{font-family:var(--font-disp);font-size:18px;font-weight:800;color:var(--accent);flex-shrink:0;line-height:1;margin-top:2px;min-width:24px}
+.prompt-head-body{flex:1}
+.prompt-text{font-size:13.5px;font-weight:600;color:var(--text);line-height:1.45;margin-bottom:4px}
+.prompt-pop{font-size:11px;color:var(--text-3)}
+.prompt-pop span{color:var(--accent);font-weight:600}
+.prompt-chev{font-size:14px;color:var(--text-3);transition:transform .2s;flex-shrink:0;margin-top:2px}
+.prompt-chev.open{transform:rotate(180deg)}
+.prompt-body{display:none;padding:0 1.125rem 1.125rem;border-top:1px solid var(--border-lt)}
+.prompt-body.open{display:block;padding-top:1rem}
+.prompt-body h4{font-size:12px;font-weight:600;color:var(--text);margin-bottom:.5rem;margin-top:.875rem;text-transform:uppercase;letter-spacing:.06em}
+.prompt-body h4:first-child{margin-top:0}
+.prompt-body p{font-size:12.5px;color:var(--text-2);line-height:1.65}
+
+/* WRITING TIPS */
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.tip-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.tip-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.tip-card h3 i{color:var(--accent);font-size:16px;flex-shrink:0}
+.tip-card p{font-size:12.5px;color:var(--text-2);line-height:1.65}
+
+/* PROCESS STEPS */
+.process-steps{display:flex;flex-direction:column;gap:0;margin-bottom:2rem}
+.process-step{display:flex;gap:1.25rem;padding:1.125rem 0;border-bottom:1px solid var(--border-lt)}
+.process-step:last-child{border-bottom:none}
+.ps-num{font-family:var(--font-disp);font-size:20px;font-weight:800;color:var(--accent);flex-shrink:0;line-height:1;min-width:28px;margin-top:2px}
+.ps-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:4px}
+.ps-desc{font-size:12.5px;color:var(--text-2);line-height:1.6}
+
+/* AVOID */
+.avoid-list{display:flex;flex-direction:column;gap:8px;margin-bottom:2rem}
+.avoid-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.125rem;display:flex;align-items:flex-start;gap:12px;border-left:3px solid #DC2626}
+.avoid-icon{font-size:16px;color:#DC2626;flex-shrink:0;margin-top:1px}
+.avoid-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.avoid-desc{font-size:12px;color:var(--text-3);line-height:1.55}
+
+/* SUPPLEMENTAL */
+.supp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.supp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.125rem}
+.supp-card h3{font-size:13px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:7px}
+.supp-card h3 i{color:var(--accent);font-size:14px}
+.supp-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+
+.footer-disc{max-width:900px;margin:0 auto 1rem;padding:0 1.5rem}
+.footer-disc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.875rem 1.125rem;display:flex;align-items:flex-start;gap:9px}
+.fdisc-icon{font-size:15px;color:var(--text-3);flex-shrink:0;margin-top:1px}
+.fdisc-text{font-size:11.5px;color:var(--text-3);line-height:1.65}
+.footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center}
+.footer p{font-size:12px;color:var(--text-3)}
+.footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:640px){
+  .nav-links{display:none}
+  .tips-grid,.supp-grid{grid-template-columns:1fr}
+  .hero,.content,.footer-disc{padding-left:1rem;padding-right:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="welcome.html">
+    <img class="nav-logo" src="favicon.ico" alt="Your College GPS logo">
+    <span class="nav-name">Your College GPS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="about.html">About us</a>
+    <div class="nav-dropdown" id="nav-gi">
+      <button class="nav-dropdown-btn active-dd" onclick="toggleGiMenu()" id="gi-btn">
+        Getting in <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="gi-menu">
+        <a class="nav-dropdown-item" href="sat.html"><i class="ti ti-pencil" aria-hidden="true"></i>SAT Prep</a>
+        <a class="nav-dropdown-item" href="act.html"><i class="ti ti-pencil" aria-hidden="true"></i>ACT Prep</a>
+        <a class="nav-dropdown-item" href="gpa.html"><i class="ti ti-calculator" aria-hidden="true"></i>GPA Calculator</a>
+        <a class="nav-dropdown-item" href="ecs.html"><i class="ti ti-users" aria-hidden="true"></i>Extracurriculars</a>
+        <a class="nav-dropdown-item active-item" href="essays.html"><i class="ti ti-file-text" aria-hidden="true"></i>Essays</a>
+        <a class="nav-dropdown-item" href="financial-aid.html"><i class="ti ti-receipt" aria-hidden="true"></i>Financial Aid</a>
+      </div>
+    </div>
+    <div class="nav-dropdown" id="nav-campus">
+      <button class="nav-dropdown-btn" onclick="toggleCampusMenu()" id="campus-btn">
+        Thriving on campus <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="campus-menu">
+        <a class="nav-dropdown-item" href="welcome.html#states"><i class="ti ti-calendar-check" aria-hidden="true"></i>Orientation checklist</a>
+        <a class="nav-dropdown-item" href="professors.html"><i class="ti ti-user" aria-hidden="true"></i>How to pick professors</a>
+        <a class="nav-dropdown-item" href="adddrop.html"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Navigate add/drop</a>
+        <a class="nav-dropdown-item" href="build-gpa.html"><i class="ti ti-chart-line" aria-hidden="true"></i>Build your GPA</a>
+        <a class="nav-dropdown-item" href="internships.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Find internships</a>
+        <a class="nav-dropdown-item" href="campus-resources.html"><i class="ti ti-building" aria-hidden="true"></i>Campus resources</a>
+        <a class="nav-dropdown-item" href="mistakes.html"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Common freshman mistakes</a>
+      </div>
+    </div>
+    <a class="nav-link" href="welcome.html#covered">What's covered</a>
+    <a class="nav-link" href="welcome.html#feedback">Feedback</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-eyebrow"><i class="ti ti-file-text" aria-hidden="true"></i> Getting into college</div>
+  <h1>Write a college essay <em>that actually stands out.</em></h1>
+  <p>The Common App personal statement is the one piece of your application that is entirely yours. No grades, no scores, no activities — just your voice. Here is how to use it well.</p>
+</header>
+
+<div class="content">
+
+  <!-- THE BASICS -->
+  <div class="section-label">The basics</div>
+  <h2 class="section-title">What the Common App personal statement actually is</h2>
+  <p class="section-sub">The Common App personal statement is a 250–650 word essay that you write once and submit to every college you apply to through the Common App platform. Over 1,100 colleges use Common App. Nearly all of them will read this essay. You choose one of seven prompts. The prompts for 2026–2027 are unchanged from last year.</p>
+
+  <div style="background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:var(--radius-md);padding:1rem 1.25rem;margin-bottom:2rem;font-size:13px;color:var(--accent-dk);line-height:1.6">
+    <strong>One important insight from admissions officers:</strong> The prompt you choose matters far less than the story you tell. Admissions readers rarely even check which prompt you selected. Focus all of your energy on the quality of your writing and the depth of your reflection — not on which prompt feels most prestigious.
+  </div>
+
+  <!-- THE 7 PROMPTS -->
+  <div class="section-label">The 7 prompts</div>
+  <h2 class="section-title">Every Common App prompt for 2026–2027 — explained</h2>
+  <p class="section-sub">All seven prompts are confirmed unchanged for 2026–2027. Here is what each one is actually asking for and how to approach it.</p>
+
+  <div class="prompts-grid">
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(1)">
+        <div class="prompt-num">1</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">Some students have a background, identity, interest, or talent that is so meaningful to them that they believe their application would be incomplete without it. If this sounds like you, then please share your story.</div>
+          <div class="prompt-pop">Selected by <span>18%</span> of applicants in 2025–2026</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc1" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb1">
+        <h4>What it's asking</h4>
+        <p>This prompt invites you to share something fundamental about who you are — a cultural background, a passion, a family tradition, an identity, or a talent that has genuinely shaped your perspective. The key word is "meaningful." This is not about listing something impressive. It is about explaining why something matters to you deeply and how it has shaped the person you are becoming.</p>
+        <h4>How to approach it</h4>
+        <p>Do not just describe the background or interest. Show how it has changed the way you think, act, or engage with others. A strong essay on this prompt might start with a specific moment or memory, then zoom out to explain its larger significance. The goal is to show the admissions officer something about your values and worldview that cannot be found anywhere else in your application.</p>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(2)">
+        <div class="prompt-num">2</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">The lessons we take from obstacles we encounter can be fundamental to our later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?</div>
+          <div class="prompt-pop">Selected by <span>23%</span> of applicants in 2025–2026 — second most popular</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc2" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb2">
+        <h4>What it's asking</h4>
+        <p>This prompt is about resilience, self-awareness, and growth. Colleges are not looking for perfect students — they are looking for students who can handle adversity and learn from it. The failure or setback you describe does not have to be dramatic. A genuine small failure that produced real insight is far more compelling than a manufactured "challenge" that conveniently made everything better.</p>
+        <h4>How to approach it</h4>
+        <p>Spend roughly one-third of the essay describing the challenge and two-thirds on what you learned and how you changed. The biggest mistake on this prompt is dwelling on the difficulty without getting to the growth. The admissions officer needs to see that you came out of the experience with a new understanding — of yourself, of others, or of how you approach problems.</p>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(3)">
+        <div class="prompt-num">3</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?</div>
+          <div class="prompt-pop">Selected by <span>3%</span> of applicants in 2025–2026</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc3" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb3">
+        <h4>What it's asking</h4>
+        <p>This prompt rewards intellectual courage and genuine curiosity. It is asking you to show that you can think independently, question assumptions, and engage seriously with ideas. The challenge you questioned could be a social norm, a long-held family belief, a conventional wisdom in your community, or an idea from school that you pushed back on.</p>
+        <h4>How to approach it</h4>
+        <p>Be specific about what prompted your questioning and what you actually did about it. The best essays on this prompt show the messy, real process of changing your mind or standing by a difficult position — not a neat story where you were obviously right all along. Admissions officers want to see how you think, not just what you concluded.</p>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(4)">
+        <div class="prompt-num">4</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">Reflect on something that someone has done for you that has made you happy or thankful in a surprising way. How has this gratitude affected or motivated you?</div>
+          <div class="prompt-pop">Selected by <span>3%</span> of applicants in 2025–2026</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc4" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb4">
+        <h4>What it's asking</h4>
+        <p>This is a newer prompt and one of the least-used. It is asking about a moment of unexpected gratitude — something someone did for you that you did not anticipate and that changed something about how you see the world or how you act in it. The key word is "surprising" — the gratitude should come from something genuinely unexpected.</p>
+        <h4>How to approach it</h4>
+        <p>The risk on this prompt is that it can come across as generic or sentimental if not handled carefully. Focus on the specificity of the moment and the concrete ways that gratitude has influenced your actions or values. Avoid being vague about the impact — show, do not tell, how this experience changed your behavior or perspective.</p>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(5)">
+        <div class="prompt-num">5</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.</div>
+          <div class="prompt-pop">Selected by <span>20%</span> of applicants in 2025–2026</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc5" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb5">
+        <h4>What it's asking</h4>
+        <p>This prompt is broadly about transformation. The "accomplishment, event, or realization" is just the starting point — the real essay is about what shifted inside you as a result. The trigger can be large or small. A realization you had reading a book, a conversation with a stranger, or a quiet moment alone can be just as powerful as a major life event.</p>
+        <h4>How to approach it</h4>
+        <p>Avoid writing an essay that is just a list of accomplishments with "and it taught me a lot" at the end. The growth needs to be specific and genuine. What exactly changed? How do you think or act differently now? The strongest essays on this prompt show a before and after — and the transition between them feels honest rather than performed.</p>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(6)">
+        <div class="prompt-num">6</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?</div>
+          <div class="prompt-pop">Selected by <span>5%</span> of applicants in 2025–2026</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc6" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb6">
+        <h4>What it's asking</h4>
+        <p>This prompt is designed for intellectually curious students who genuinely geek out about something. It is asking you to demonstrate authentic intellectual passion — the kind that exists outside of school assignments and grades. This is one of the best prompts for students whose strongest quality is their curiosity or their depth of engagement with a specific subject.</p>
+        <h4>How to approach it</h4>
+        <p>Do not choose a topic because it sounds impressive. Choose the thing you actually lose track of time thinking about. Then explain it in a way that is accessible but shows genuine depth. The second part of the prompt — "what or who do you turn to when you want to learn more" — is often overlooked. Answering it specifically shows initiative and self-direction.</p>
+      </div>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-head" onclick="togglePrompt(7)">
+        <div class="prompt-num">7</div>
+        <div class="prompt-head-body">
+          <div class="prompt-text">Share an essay on any topic of your choice. It can be one you have already written, one that responds to a different prompt, or one of your own design.</div>
+          <div class="prompt-pop">Selected by <span>28%</span> of applicants in 2025–2026 — most popular</div>
+        </div>
+        <i class="ti ti-chevron-down prompt-chev" id="pc7" aria-hidden="true"></i>
+      </div>
+      <div class="prompt-body" id="pb7">
+        <h4>What it's asking</h4>
+        <p>This is the most popular prompt precisely because it gives you complete freedom. There is no wrong topic here — only weak execution. Students who choose this prompt often write essays about something deeply personal or unconventional that does not fit neatly into the other six prompts.</p>
+        <h4>How to approach it</h4>
+        <p>The freedom of this prompt can be paralyzing. The most important thing is to start writing — even badly — rather than waiting for the perfect topic to arrive. Many of the best essays on this prompt start with a very specific, concrete moment or observation and then expand outward. If you are using an essay you have already written, make sure it still answers the core question of who you are and what you will contribute to a campus community.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WRITING PROCESS -->
+  <div class="section-label">The writing process</div>
+  <h2 class="section-title">How to actually write the essay</h2>
+  <p class="section-sub">Most students spend too long deciding on a topic and not enough time on the actual writing and revision. Here is the process that produces the strongest results.</p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="ps-num">01</div>
+      <div>
+        <div class="ps-title">Start brainstorming in the spring of junior year</div>
+        <div class="ps-desc">Summer before senior year is when most students write their essays, but the best essays start earlier. In spring of junior year, begin keeping a running list of moments, experiences, and ideas that feel significant to you. Do not filter yet — just collect. The essay topic often reveals itself after several weeks of informal reflection rather than in a single brainstorming session.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="ps-num">02</div>
+      <div>
+        <div class="ps-title">Write a 900-word draft first — then cut to 650</div>
+        <div class="ps-desc">Trying to write within the word limit from the start kills essays. Write everything you want to say without worrying about length. Then cut. The cutting process almost always produces a sharper, cleaner essay than the original — and the content you cut often contains the best material for the additional information section or supplemental essays.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="ps-num">03</div>
+      <div>
+        <div class="ps-title">Revise 3–5 times — not more, not fewer</div>
+        <div class="ps-desc">Three to five drafts is the sweet spot for most students. Fewer than three and you are probably leaving significant improvements on the table. More than five and you are likely over-editing — the essay starts to lose your voice and sound like a committee wrote it. Each revision should have a specific focus: one pass for structure, one for word choice, one for the opening and closing, one for voice.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="ps-num">04</div>
+      <div>
+        <div class="ps-title">Get an outside reader — but choose carefully</div>
+        <div class="ps-desc">Having someone else read your essay is essential for catching typos, unclear sentences, and structural problems you are too close to see. Choose a reader who will give you honest feedback, not just encouragement. Your school counselor, an English teacher, or a trusted adult who does not know you too well is ideal. Avoid letting too many people read it — conflicting feedback from five people will send you in circles.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="ps-num">05</div>
+      <div>
+        <div class="ps-title">Read it out loud before you finalize it</div>
+        <div class="ps-desc">Reading your essay out loud is the single most underrated revision technique. You will immediately hear where the pacing drags, where a sentence is too long, where the language sounds unnatural, and where the transitions feel forced. If you stumble reading it, the admissions officer will stumble reading it too. Fix every place you pause or trip.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT TO AVOID -->
+  <div class="section-label">What to avoid</div>
+  <h2 class="section-title">Topics and approaches that consistently fail</h2>
+  <p class="section-sub">These essay types appear in thousands of applications every year and tend to produce forgettable results — not because the topics are bad, but because they are almost always handled in the same predictable way.</p>
+
+  <div class="avoid-list">
+    <div class="avoid-item">
+      <i class="ti ti-x avoid-icon" aria-hidden="true"></i>
+      <div>
+        <div class="avoid-title">The big game or big match essay</div>
+        <div class="avoid-desc">"The most important moment of my life was when my team won (or lost) the championship." Sports essays that center on a single dramatic moment without deeper reflection almost always fall flat. The game is not the point — what you learned about yourself, your teammates, or your relationship to pressure and failure is the point. Start there instead.</div>
+      </div>
+    </div>
+    <div class="avoid-item">
+      <i class="ti ti-x avoid-icon" aria-hidden="true"></i>
+      <div>
+        <div class="avoid-title">The mission trip or volunteer abroad essay</div>
+        <div class="avoid-desc">Essays that describe a short-term volunteer trip as a life-changing experience and center on what you gave to a community abroad raise more red flags than they resolve. They often come across as tone-deaf or self-congratulatory. If you want to write about a service experience, focus on a specific moment of genuine discomfort, confusion, or changed understanding — not the trip's feel-good summary.</div>
+      </div>
+    </div>
+    <div class="avoid-item">
+      <i class="ti ti-x avoid-icon" aria-hidden="true"></i>
+      <div>
+        <div class="avoid-title">The resume essay</div>
+        <div class="avoid-desc">"Behold all of my achievements." An essay that simply lists accomplishments in narrative form adds nothing to what is already in the rest of your application. The personal statement exists specifically to tell the story behind the resume, not to restate it in paragraph form.</div>
+      </div>
+    </div>
+    <div class="avoid-item">
+      <i class="ti ti-x avoid-icon" aria-hidden="true"></i>
+      <div>
+        <div class="avoid-title">The tragedy essay without reflection</div>
+        <div class="avoid-desc">Writing about a genuinely difficult experience — the death of a loved one, a serious illness, a family crisis — can produce powerful essays. But the essay has to be about you, not about the event itself. If the difficult experience is the entire essay, the admissions officer is left wondering who you are beyond your pain. The reflection is what matters, not the retelling.</div>
+      </div>
+    </div>
+    <div class="avoid-item">
+      <i class="ti ti-x avoid-icon" aria-hidden="true"></i>
+      <div>
+        <div class="avoid-title">Starting with a dictionary definition</div>
+        <div class="avoid-desc">"Webster's Dictionary defines leadership as..." This opening appears in thousands of essays every cycle and signals immediately that the essay will be generic. Admissions officers have read it so many times it has become shorthand for an essay that is playing it safe. Start with a specific moment, an image, a line of dialogue, or a question that pulls the reader in immediately.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPLEMENTAL ESSAYS -->
+  <div class="section-label">Supplemental essays</div>
+  <h2 class="section-title">How to handle "Why This College" and other supplementals</h2>
+  <p class="section-sub">Most colleges ask for supplemental essays on top of the Common App personal statement. These are shorter — typically 100–300 words — and are your chance to show that you have done real research on a specific school.</p>
+
+  <div class="supp-grid">
+    <div class="supp-card">
+      <h3><i class="ti ti-building-community" aria-hidden="true"></i>"Why this college?" essays</h3>
+      <p>The most common supplemental. Admissions officers can immediately tell if you copied and pasted the same answer across multiple schools. Name specific professors whose research interests you, courses that directly connect to your goals, programs that do not exist at other schools, and campus communities you genuinely want to join. Generic answers ("your strong academics and vibrant campus life") are the single most common supplemental mistake.</p>
+    </div>
+    <div class="supp-card">
+      <h3><i class="ti ti-run" aria-hidden="true"></i>"Why this major?" essays</h3>
+      <p>Connect your interest to specific experiences — a class that sparked it, a project you completed, a problem you want to solve. Avoid vague statements like "I have always loved science." Show the specific moment or progression that led you to this field. If your intended major connects directly to your Common App essay topic, that coherence is a strength — do not shy away from it.</p>
+    </div>
+    <div class="supp-card">
+      <h3><i class="ti ti-users" aria-hidden="true"></i>Community and diversity essays</h3>
+      <p>These essays ask what you will contribute to the campus community. Focus on the specific perspective, experience, or skill you bring that others might not — not what you hope to receive from the college. Colleges are building a class, not just evaluating individuals. Show what you add to the mix.</p>
+    </div>
+    <div class="supp-card">
+      <h3><i class="ti ti-activity" aria-hidden="true"></i>Activity-specific supplementals</h3>
+      <p>Some schools ask you to expand on one of your Common App activities. Choose the activity that tells the most complete story about who you are — and use the extra space to go deeper than the 150-character Common App description allows. Include what you actually did, what you learned, and what it means for your future direction.</p>
+    </div>
+  </div>
+
+  <!-- TIPS GRID -->
+  <div class="section-label">Final tips</div>
+  <h2 class="section-title">What the strongest essays have in common</h2>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h3><i class="ti ti-zoom-in" aria-hidden="true"></i>Specificity over generality</h3>
+      <p>The more specific you are, the more universal your essay becomes. "I love cooking" is forgettable. "Every Sunday my grandmother stood at the same spot on the left side of her stove, teaching me to make biryani by smell" is not. Specific details are what make readers feel like they are actually meeting you.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-microphone" aria-hidden="true"></i>Write in your actual voice</h3>
+      <p>If you do not use words like "quintessential" or "plethora" in everyday conversation, do not put them in your essay. Admissions officers read thousands of essays and can immediately tell when a student is writing in a voice that is not their own. The essays that stand out sound like a real person talking — not a formal document.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-arrow-right" aria-hidden="true"></i>Show, do not tell</h3>
+      <p>"I am a hard worker" tells the reader nothing they cannot assume about any applicant. Describing the specific thing you did — staying until 11pm three nights in a row to get the robotics code right — shows it. Every abstract claim in your essay should be backed by a concrete example that makes the reader believe it without being told.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-door-enter" aria-hidden="true"></i>Open strong — the first sentence matters</h3>
+      <p>Admissions officers read quickly. Your opening sentence determines whether they lean in or skim. Avoid openings that start with "I" or with broad philosophical statements. Start in the middle of a scene, with a surprising fact, or with a line of dialogue. Give the reader a reason to keep reading in the very first sentence.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-refresh" aria-hidden="true"></i>The topic is not the essay</h3>
+      <p>Two students can write about the exact same experience and produce completely different essays. The topic is just the vehicle. What matters is the depth of reflection, the quality of the writing, and the clarity of the insight. Do not abandon a topic because someone else wrote about the same thing. Focus on writing about it better and more honestly than anyone else could.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-clock" aria-hidden="true"></i>Start earlier than you think you need to</h3>
+      <p>The best college essays are written in summer before senior year, not in October during application season. When you are also managing senior classes, college visits, and deadlines, your creative capacity for a personal essay is severely limited. Give yourself time to write badly first, then revise into something good.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-disc">
+  <div class="footer-disc-box">
+    <i class="ti ti-info-circle fdisc-icon" aria-hidden="true"></i>
+    <p class="fdisc-text">Your College GPS is an independent student-built resource not affiliated with Common App or any college. Prompt popularity data sourced from Common App's publicly released 2025–2026 data. All prompts confirmed unchanged for 2026–2027 per Common App's official announcement. Always verify requirements at commonapp.org. &copy; 2026 Your College GPS.</p>
+  </div>
+</div>
+<footer class="footer">
+  <p><a href="welcome.html">Your College GPS</a> &middot; <a href="getting-in.html">Getting in</a> &middot; <a href="ecs.html">Extracurriculars</a> &middot; <a href="financial-aid.html">Financial Aid</a> &middot; 2026</p>
+</footer>
+
+<script>
+function togglePrompt(n){
+  var body=document.getElementById('pb'+n);
+  var chev=document.getElementById('pc'+n);
+  var isOpen=body.classList.contains('open');
+  for(var i=1;i<=7;i++){
+    document.getElementById('pb'+i).classList.remove('open');
+    document.getElementById('pc'+i).classList.remove('open');
+  }
+  if(!isOpen){body.classList.add('open');chev.classList.add('open');}
+}
+function toggleGiMenu(){var b=document.getElementById('gi-btn'),m=document.getElementById('gi-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+function toggleCampusMenu(){var b=document.getElementById('campus-btn'),m=document.getElementById('campus-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+document.addEventListener('click',function(e){
+  ['gi','campus'].forEach(function(id){
+    var dd=document.getElementById('nav-'+id);
+    if(dd&&!dd.contains(e.target)){var b=document.getElementById(id+'-btn'),m=document.getElementById(id+'-menu');if(b)b.classList.remove('open');if(m)m.classList.remove('open');}
+  });
+});
+</script>
+</body>
+</html>
