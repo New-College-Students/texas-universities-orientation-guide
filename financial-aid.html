@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Aid & Scholarships — Your College GPS</title>
+<meta name="description" content="A complete financial aid timeline covering FAFSA, CSS Profile, major national scholarships, and step-by-step guidance on maximizing your aid package.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#F7F4EF;--surface:#FFFFFF;--border:#E4DDD3;--border-lt:#EDE8E2;
+  --text:#1A1714;--text-2:#6B6560;--text-3:#9E9891;
+  --accent:#BF4C00;--accent-lt:#FAECE7;--accent-dk:#9A3D00;
+  --font-disp:'Syne',sans-serif;--font-body:'Inter',sans-serif;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.04);
+  --shadow:0 2px 6px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:58px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo{width:38px;height:38px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.nav-name{font-family:var(--font-disp);font-size:15px;font-weight:800;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);text-decoration:none;transition:background .15s,color .15s}
+.nav-link:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:5px;cursor:pointer;border:none;background:none;font-family:var(--font-body);transition:background .15s,color .15s}
+.nav-dropdown-btn:hover,.nav-dropdown-btn.active-dd{background:var(--border-lt);color:var(--text)}
+.nav-dropdown-btn.active-dd{font-weight:600;color:var(--accent)}
+.nav-dropdown-btn i.ti-chevron-down{font-size:12px;transition:transform .2s}
+.nav-dropdown-btn.open i.ti-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,.1);min-width:220px;padding:6px;z-index:300;display:none}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius-sm);text-decoration:none;color:var(--text-2);font-size:13px;transition:background .12s,color .12s}
+.nav-dropdown-item:hover{background:var(--accent-lt);color:var(--accent)}
+.nav-dropdown-item.active-item{color:var(--accent);font-weight:600;background:var(--accent-lt)}
+.nav-dropdown-item i{font-size:15px;color:var(--accent);flex-shrink:0}
+
+.hero{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 2rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:999px;padding:5px 14px;margin-bottom:1.25rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,42px);font-weight:800;color:var(--text);line-height:1.1;margin-bottom:.875rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:15px;color:var(--text-2);line-height:1.7;max-width:600px}
+
+.content{max-width:900px;margin:0 auto;padding:0 1.5rem 4rem}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;margin-top:3rem}
+.section-label:first-child{margin-top:0}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--text);margin-bottom:.75rem}
+.section-sub{font-size:14px;color:var(--text-2);line-height:1.7;max-width:640px;margin-bottom:1.75rem}
+
+/* WARNING BANNER */
+.warn-banner{background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius-md);padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:10px;margin-bottom:2rem}
+.warn-icon{font-size:16px;color:#D97706;flex-shrink:0;margin-top:1px}
+.warn-text{font-size:12.5px;color:#92400E;line-height:1.6}
+.warn-text strong{font-weight:600}
+
+/* THREE DEADLINE TYPES */
+.deadline-types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2rem}
+.dt-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.dt-card.important{border-color:var(--accent);border-width:2px}
+.dt-badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 9px;margin-bottom:.75rem;display:inline-block}
+.dt-badge.federal{background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE}
+.dt-badge.state{background:#F0FDF4;color:#16A34A;border:1px solid #A7F3D0}
+.dt-badge.school{background:var(--accent-lt);color:var(--accent);border:1px solid #F0C4B0}
+.dt-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.dt-desc{font-size:12px;color:var(--text-2);line-height:1.6}
+.dt-date{font-size:12px;font-weight:600;color:var(--text);margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border-lt)}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0;margin-bottom:2rem}
+.tl-item{display:flex;gap:1.25rem;padding:1.125rem 0;border-bottom:1px solid var(--border-lt)}
+.tl-item:last-child{border-bottom:none}
+.tl-when{font-size:11px;font-weight:700;color:var(--accent);min-width:90px;flex-shrink:0;padding-top:3px;line-height:1.4}
+.tl-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:4px}
+.tl-desc{font-size:12px;color:var(--text-2);line-height:1.55}
+.tl-urgent{font-size:10px;font-weight:700;background:#FEF2F2;color:#DC2626;border:1px solid #FCA5A5;border-radius:999px;padding:1px 7px;margin-left:7px;vertical-align:middle}
+
+/* SCHOLARSHIP CARDS */
+.scholarship-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.scholarship-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.sc-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.625rem;gap:8px}
+.sc-name{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+.sc-amount{font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-lt);border-radius:999px;padding:2px 9px;white-space:nowrap;flex-shrink:0}
+.sc-deadline{font-size:11px;font-weight:600;color:#DC2626;margin-bottom:.5rem}
+.sc-desc{font-size:12px;color:var(--text-2);line-height:1.6}
+.sc-link{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--accent);text-decoration:none;margin-top:.75rem;font-weight:500}
+.sc-link:hover{text-decoration:underline}
+
+/* AID TYPES */
+.aid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.aid-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.125rem}
+.aid-card h3{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:7px}
+.aid-card h3 i{color:var(--accent);font-size:15px}
+.aid-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+
+/* TIPS */
+.tips-list{display:flex;flex-direction:column;gap:8px;margin-bottom:2rem}
+.tip-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.125rem;display:flex;gap:12px;align-items:flex-start}
+.tip-dot{width:22px;height:22px;background:var(--accent-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.tip-dot i{font-size:12px;color:var(--accent)}
+.tip-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tip-desc{font-size:12px;color:var(--text-3);line-height:1.55}
+
+.footer-disc{max-width:900px;margin:0 auto 1rem;padding:0 1.5rem}
+.footer-disc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.875rem 1.125rem;display:flex;align-items:flex-start;gap:9px}
+.fdisc-icon{font-size:15px;color:var(--text-3);flex-shrink:0;margin-top:1px}
+.fdisc-text{font-size:11.5px;color:var(--text-3);line-height:1.65}
+.footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center}
+.footer p{font-size:12px;color:var(--text-3)}
+.footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:640px){
+  .nav-links{display:none}
+  .deadline-types,.scholarship-grid,.aid-grid{grid-template-columns:1fr}
+  .hero,.content,.footer-disc{padding-left:1rem;padding-right:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="welcome.html">
+    <img class="nav-logo" src="favicon.ico" alt="Your College GPS logo">
+    <span class="nav-name">Your College GPS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="welcome.html" title="Home" style="padding:6px 10px"><i class="ti ti-home" style="font-size:16px;vertical-align:middle" aria-label="Home"></i></a>
+    <a class="nav-link" href="about.html">About us</a>
+    <div class="nav-dropdown" id="nav-gi">
+      <button class="nav-dropdown-btn active-dd" onclick="toggleGiMenu()" id="gi-btn">
+        Getting in <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="gi-menu">
+        <a class="nav-dropdown-item" href="sat.html"><i class="ti ti-pencil" aria-hidden="true"></i>SAT Prep</a>
+        <a class="nav-dropdown-item" href="act.html"><i class="ti ti-pencil" aria-hidden="true"></i>ACT Prep</a>
+        <a class="nav-dropdown-item" href="gpa.html"><i class="ti ti-calculator" aria-hidden="true"></i>GPA Calculator</a>
+        <a class="nav-dropdown-item" href="ecs.html"><i class="ti ti-users" aria-hidden="true"></i>Extracurriculars</a>
+        <a class="nav-dropdown-item" href="essays.html"><i class="ti ti-file-text" aria-hidden="true"></i>Essays</a>
+        <a class="nav-dropdown-item active-item" href="financial-aid.html"><i class="ti ti-receipt" aria-hidden="true"></i>Financial Aid</a>
+      </div>
+    </div>
+    <div class="nav-dropdown" id="nav-campus">
+      <button class="nav-dropdown-btn" onclick="toggleCampusMenu()" id="campus-btn">
+        Thriving on campus <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="campus-menu">
+        <a class="nav-dropdown-item" href="orientation.html"><i class="ti ti-calendar-check" aria-hidden="true"></i>Orientation checklist</a>
+        <a class="nav-dropdown-item" href="professors.html"><i class="ti ti-user" aria-hidden="true"></i>How to pick professors</a>
+        <a class="nav-dropdown-item" href="adddrop.html"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Navigate add/drop</a>
+        <a class="nav-dropdown-item" href="build-gpa.html"><i class="ti ti-chart-line" aria-hidden="true"></i>Build your GPA</a>
+        <a class="nav-dropdown-item" href="internships.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Find internships</a>
+        <a class="nav-dropdown-item" href="campus-resources.html"><i class="ti ti-building" aria-hidden="true"></i>Campus resources</a>
+        <a class="nav-dropdown-item" href="mistakes.html"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Common freshman mistakes</a>
+      </div>
+    </div>    <a class="nav-link" href="welcome.html#feedback">Feedback</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-eyebrow"><i class="ti ti-receipt" aria-hidden="true"></i> Getting into college</div>
+  <h1>Financial aid and scholarships <em>done right.</em></h1>
+  <p>Most students leave money on the table — not because they do not qualify, but because they missed a deadline or did not know a program existed. Here is the complete timeline and everything you need to know.</p>
+</header>
+
+<div class="content">
+
+  <!-- THE BIG WARNING -->
+  <div class="warn-banner">
+    <i class="ti ti-alert-triangle warn-icon" aria-hidden="true"></i>
+    <p class="warn-text"><strong>The most important thing to know:</strong> There is not one FAFSA deadline — there are three separate layers, each controlling access to different pools of money. Most students miss significant aid by following the federal deadline instead of the earlier state and school deadlines. Read this section carefully before you file anything.</p>
+  </div>
+
+  <!-- THREE DEADLINE TYPES -->
+  <div class="section-label">The three deadline layers</div>
+  <h2 class="section-title">Federal, state, and school — three completely different deadlines</h2>
+  <p class="section-sub">Each deadline layer controls access to a different pool of money. Missing the later federal deadline is bad. Missing the earlier state and school deadlines is where most students actually lose money.</p>
+
+  <div class="deadline-types">
+    <div class="dt-card">
+      <span class="dt-badge federal">Federal deadline</span>
+      <div class="dt-title">Federal grants, loans & work-study</div>
+      <div class="dt-desc">The last possible date you can file the FAFSA and still be considered for any federal financial aid — including Pell Grants, federal work-study, and federal student loans. Missing this means you lose access to all federal aid for the entire year.</div>
+      <div class="dt-date">June 30, 2027 for 2026–27 school year</div>
+    </div>
+    <div class="dt-card important">
+      <span class="dt-badge state">State deadline</span>
+      <div class="dt-title">State grants and scholarships</div>
+      <div class="dt-desc">Every state sets its own FAFSA priority deadline for state-funded grants and scholarships. These vary dramatically — some states have deadlines as early as October. Many state programs award money on a first-come, first-served basis until funds run out. Always prioritize your state deadline over the federal one.</div>
+      <div class="dt-date">Varies by state — often February or March. Check your state's education agency website.</div>
+    </div>
+    <div class="dt-card important">
+      <span class="dt-badge school">School deadline</span>
+      <div class="dt-title">Institutional grants and scholarships</div>
+      <div class="dt-desc">Each college sets its own FAFSA deadline for the school's own institutional aid — grants and scholarships that come directly from the school's budget. These are often the largest chunks of aid and frequently have the earliest deadlines, sometimes falling between November and February.</div>
+      <div class="dt-date">Varies by school — typically November to February. Check each school's financial aid page individually.</div>
+    </div>
+  </div>
+
+  <!-- FULL TIMELINE -->
+  <div class="section-label">The full timeline</div>
+  <h2 class="section-title">Month-by-month financial aid and scholarship timeline</h2>
+  <p class="section-sub">This timeline assumes you are applying to college in fall of your senior year for enrollment the following fall. Scholarship deadlines are spread throughout the year — start early and keep a personal deadline calendar.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-when">Junior year — Spring</div>
+      <div>
+        <div class="tl-title">Start your scholarship search now — not senior year</div>
+        <div class="tl-desc">Many major scholarships open applications in the spring of junior year. QuestBridge, for example, begins its process in the spring with a registration period. Waiting until senior year means you have already missed some of the largest opportunities. Create a spreadsheet with deadlines, requirements, and essay prompts for every scholarship you plan to apply to.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Aug–Sep — Senior year</div>
+      <div>
+        <div class="tl-title">FAFSA opens October 1 — prepare your documents now <span class="tl-urgent">Time-sensitive</span></div>
+        <div class="tl-desc">Before the FAFSA opens, gather what you need: your Social Security number, your parents' Social Security numbers, your most recent federal tax return (or your parents'), bank account statements, and records of any untaxed income. Create your FSA ID at studentaid.gov — both you and one parent need separate FSA IDs, and account verification can take several days.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Sep 15 — Senior year</div>
+      <div>
+        <div class="tl-title">Gates Scholarship application deadline</div>
+        <div class="tl-desc">The Gates Scholarship covers 100% of the cost of attendance not covered by other aid for approximately 300 recipients per year. Eligibility: Pell Grant-eligible, U.S. citizen or permanent resident, minority student, minimum 3.3 unweighted GPA. Apply at thegatesscholarship.org. Missing this date by even one day disqualifies you.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Oct 1 — Senior year</div>
+      <div>
+        <div class="tl-title">FAFSA opens — file immediately <span class="tl-urgent">File now</span></div>
+        <div class="tl-desc">File on October 1 or as close to it as possible. State grants and many school grants are first-come, first-served and can be depleted months before the federal deadline. Filing early does not commit you to any school — it simply puts you in the pool for aid. The FAFSA uses prior-prior year tax data, so you can file with completed tax returns rather than estimates.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Oct–Nov — Senior year</div>
+      <div>
+        <div class="tl-title">CSS Profile — required by many private colleges</div>
+        <div class="tl-desc">The CSS Profile is a separate financial aid form required by approximately 400 private colleges in addition to the FAFSA. It is more detailed than the FAFSA and collects information about home equity, business assets, and non-custodial parent income. The fee is $25 for the first school and $16 for each additional one. Check each school's financial aid page to see if they require it.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Nov–Dec — Senior year</div>
+      <div>
+        <div class="tl-title">Early Decision and Early Action deadlines — financial aid implications</div>
+        <div class="tl-desc">If you apply Early Decision (binding), you are committing to attend if accepted regardless of your financial aid package. This gives you almost no leverage to negotiate aid. Early Action (non-binding) gives you more time to compare packages. If cost is a significant factor in your college choice, be very careful about binding Early Decision programs before seeing your financial aid offer.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Jan–Feb — Senior year</div>
+      <div>
+        <div class="tl-title">Many state and school financial aid priority deadlines <span class="tl-urgent">Most critical window</span></div>
+        <div class="tl-desc">This is the window where most institutional and state aid priority deadlines fall. If you have not filed your FAFSA by now, do it immediately. Many schools' highest grant amounts are awarded to students who file earliest. Check every school on your list individually — priority deadlines vary significantly and are not published in a single centralized database.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">March–April — Senior year</div>
+      <div>
+        <div class="tl-title">Compare financial aid packages — and do not be afraid to appeal</div>
+        <div class="tl-desc">When you receive financial aid award letters, compare them carefully using the net price (total cost minus grants and scholarships, not including loans). If you receive a significantly better offer from a comparable school, you can formally appeal your aid at another school. Contact the financial aid office directly, explain your situation, and ask if they can reconsider. This works more often than students expect.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">May 1 — Senior year</div>
+      <div>
+        <div class="tl-title">National College Decision Day — confirm your enrollment</div>
+        <div class="tl-desc">May 1 is the standard deadline to commit to a school and submit your enrollment deposit. Some schools have different deadlines — verify with each school directly. After committing, notify any other schools you are not attending as a courtesy so they can release your spot to waitlisted students.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPES OF AID -->
+  <div class="section-label">Types of financial aid</div>
+  <h2 class="section-title">Grants, scholarships, loans, and work-study — what's the difference</h2>
+  <div class="aid-grid">
+    <div class="aid-card">
+      <h3><i class="ti ti-gift" aria-hidden="true"></i>Grants — free money, no repayment</h3>
+      <p>Grants are need-based aid that you do not pay back. The federal Pell Grant is the largest grant program — for the 2025–26 year, the maximum is $7,395 annually. States and individual colleges also offer their own grant programs. Always pursue grants before any other form of aid.</p>
+    </div>
+    <div class="aid-card">
+      <h3><i class="ti ti-award" aria-hidden="true"></i>Scholarships — merit or need, no repayment</h3>
+      <p>Scholarships are free money awarded based on academic merit, talent, background, or specific criteria set by the donor. They can come from the college itself, private organizations, corporations, or community groups. There is no single database — you need to actively search for scholarships using tools like Fastweb, Scholarships.com, and your school's own scholarship list.</p>
+    </div>
+    <div class="aid-card">
+      <h3><i class="ti ti-credit-card" aria-hidden="true"></i>Federal loans — borrowed money with interest</h3>
+      <p>Federal loans are part of most financial aid packages and must be repaid with interest after graduation. Subsidized loans do not accrue interest while you are in school. Unsubsidized loans do. Direct PLUS Loans are taken by parents, not students. Never borrow more in total student loans than your expected first-year salary after graduation — this is a widely used rule of thumb that prevents over-borrowing.</p>
+    </div>
+    <div class="aid-card">
+      <h3><i class="ti ti-building-community" aria-hidden="true"></i>Work-study — earn money on campus</h3>
+      <p>Federal Work-Study is a program that provides part-time jobs for students with financial need, typically on campus. It appears in your aid package as an amount you can earn — but you have to actually apply for and work a qualifying job to receive it. It does not appear as cash. Many students do not realize this and treat work-study awards as grant money.</p>
+    </div>
+  </div>
+
+  <!-- MAJOR SCHOLARSHIPS -->
+  <div class="section-label">Major national scholarships</div>
+  <h2 class="section-title">Scholarships worth knowing about</h2>
+  <p class="section-sub">These are nationally recognized scholarships with verified deadlines and significant award amounts. Always verify current deadlines directly on each organization's official website before applying — deadlines can shift year to year.</p>
+
+  <div class="scholarship-grid">
+    <div class="scholarship-card">
+      <div class="sc-header">
+        <div class="sc-name">The Gates Scholarship</div>
+        <div class="sc-amount">Full cost of attendance</div>
+      </div>
+      <div class="sc-deadline">Deadline: September 15 annually</div>
+      <div class="sc-desc">Covers 100% of the cost of attendance not met by other aid for approximately 300 recipients per year. For Pell-eligible minority students with a minimum 3.3 unweighted GPA. One of the most competitive and most valuable scholarships in the country.</div>
+      <a class="sc-link" href="https://www.thegatesscholarship.org" target="_blank" rel="noopener">thegatesscholarship.org <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+    <div class="scholarship-card">
+      <div class="sc-header">
+        <div class="sc-name">QuestBridge National College Match</div>
+        <div class="sc-amount">Full 4-year scholarship</div>
+      </div>
+      <div class="sc-deadline">Deadline: Late September annually (verify at questbridge.org)</div>
+      <div class="sc-desc">Connects high-achieving, low-income students with full 4-year scholarships to partner colleges including Yale, Princeton, Stanford, and 40+ others. Students must rank highly through a competitive process. One of the most transformative programs for first-generation and low-income students.</div>
+      <a class="sc-link" href="https://www.questbridge.org" target="_blank" rel="noopener">questbridge.org <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+    <div class="scholarship-card">
+      <div class="sc-header">
+        <div class="sc-name">Coca-Cola Scholars Program</div>
+        <div class="sc-amount">$20,000</div>
+      </div>
+      <div class="sc-deadline">Deadline: October 31 annually</div>
+      <div class="sc-desc">Awards 150 scholarships of $20,000 to high school seniors who demonstrate leadership, service, and academic achievement. One of the most prestigious merit scholarships available to high school seniors. Apply at coca-colascholarsfoundation.org.</div>
+      <a class="sc-link" href="https://www.coca-colascholarsfoundation.org" target="_blank" rel="noopener">coca-colascholarsfoundation.org <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+    <div class="scholarship-card">
+      <div class="sc-header">
+        <div class="sc-name">National Merit Scholarship Program</div>
+        <div class="sc-amount">Varies ($2,500–full ride)</div>
+      </div>
+      <div class="sc-deadline">Entry point: PSAT in October of junior year</div>
+      <div class="sc-desc">Based on PSAT/NMSQT scores from junior year. Semifinalists, finalists, and scholars receive recognition and scholarship opportunities from corporate sponsors, colleges, and the National Merit Corporation. Being a National Merit Scholar significantly boosts institutional scholarship offers from many universities.</div>
+      <a class="sc-link" href="https://www.nationalmerit.org" target="_blank" rel="noopener">nationalmerit.org <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+    <div class="scholarship-card">
+      <div class="sc-header">
+        <div class="sc-name">Elks National Foundation Most Valuable Student Scholarship</div>
+        <div class="sc-amount">Up to $50,000 ($12,500/yr)</div>
+      </div>
+      <div class="sc-deadline">Deadline: Early November annually (check elks.org)</div>
+      <div class="sc-desc">Awards 500 scholarships based on scholarship, leadership, and financial need. U.S. citizens only. One of the larger scholarship programs available to high school seniors, with awards at the national and district level. Less competitive than Gates or QuestBridge at the district level.</div>
+      <a class="sc-link" href="https://www.elks.org/scholars" target="_blank" rel="noopener">elks.org/scholars <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+    <div class="scholarship-card">
+      <div class="sc-header">
+        <div class="sc-name">Fastweb Scholarship Search</div>
+        <div class="sc-amount">Varies — thousands of listings</div>
+      </div>
+      <div class="sc-deadline">Ongoing — depends on each scholarship</div>
+      <div class="sc-desc">Fastweb is one of the most comprehensive free scholarship search databases available. Create a profile and it matches you with scholarships based on your background, interests, and intended major. Many smaller, less competitive scholarships are listed here that most students never find on their own.</div>
+      <a class="sc-link" href="https://www.fastweb.com" target="_blank" rel="noopener">fastweb.com <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+  </div>
+
+  <!-- TEXAS-SPECIFIC -->
+  <div class="section-label">Texas students</div>
+  <h2 class="section-title">Texas-specific financial aid programs</h2>
+  <p class="section-sub">If you are attending a Texas public university, these state programs are significant and have early filing requirements tied to the FAFSA.</p>
+
+  <div class="tips-list">
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-star" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">TEXAS Grant (Towards EXcellence, Access, and Success)</div>
+        <div class="tip-desc">The largest state grant program in Texas, providing up to full tuition at public colleges for financially needy students. Must complete the FAFSA as early as possible after October 1 — funds are limited and awarded on a first-come, first-served basis. Must be a Texas resident and graduate from a Texas high school. Renewable for up to six years if you maintain satisfactory academic progress.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Texas Public Education Grant (TPEG)</div>
+        <div class="tip-desc">Need-based grant provided directly by Texas public colleges and universities from a state-mandated set-aside fund. Award amounts and eligibility vary by school. Contact the financial aid office at each Texas school you are applying to for specific information — deadlines and amounts differ significantly between institutions.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-certificate" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Top 10% Rule and automatic admission</div>
+        <div class="tip-desc">Texas high school students who graduate in the top 10% of their class (top 6% for UT Austin specifically) are automatically admitted to Texas public universities. Automatic admission does not mean automatic financial aid — you still must file the FAFSA. But guaranteed admission combined with strong FAFSA filing can result in significant aid packages at schools like UTD, Texas A&M, and UT Austin.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-search" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Institutional scholarships at Texas universities</div>
+        <div class="tip-desc">Every major Texas university has its own merit scholarship programs with separate applications and deadlines. UTD's merit scholarships, for example, have priority deadlines in December and January for fall enrollment. Check each school's scholarship page separately — these are distinct from need-based FAFSA aid and often require a separate application.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="section-label">Key strategies</div>
+  <h2 class="section-title">How to maximize your financial aid</h2>
+  <div class="tips-list">
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-clock" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">File as early as possible — not by the deadline</div>
+        <div class="tip-desc">The federal FAFSA deadline of June 30 is not a target date. It is the last possible moment. Many state and institutional grant programs deplete their funds months before the federal deadline. Filing in October when the FAFSA opens gives you the best chance at the maximum amount of grant money available to you.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-mail" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Appeal your aid package — it is more common than you think</div>
+        <div class="tip-desc">If your family's financial situation has changed significantly since filing your taxes — a job loss, medical expenses, or other major change — contact the financial aid office and request a Professional Judgment review. Financial aid officers have discretion to adjust aid based on circumstances not captured by the FAFSA. This is a legitimate and widely used process.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-calculator" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Use the net price calculator before you apply</div>
+        <div class="tip-desc">Every college with federal financial aid is required to have a net price calculator on their website. Use it before applying to get an estimate of what you will actually pay after grants and scholarships. A school with a higher sticker price sometimes ends up cheaper than a school with a lower sticker price, depending on how generous their aid is.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-alert-circle" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Read every aid letter carefully — loans are not free money</div>
+        <div class="tip-desc">Financial aid award letters can be confusing and sometimes deliberately misleading about what is a grant versus a loan. Before accepting any aid package, identify exactly which components are grants and scholarships (do not need to be repaid) and which are loans (do need to be repaid with interest). Do not accept loans without understanding what your total debt will be at graduation.</div>
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"><i class="ti ti-refresh" aria-hidden="true"></i></div>
+      <div>
+        <div class="tip-title">Refile the FAFSA every year</div>
+        <div class="tip-desc">The FAFSA is not a one-time application. You must refile it every year you are enrolled. Your aid package can change each year based on your family's financial situation. Set a calendar reminder for October 1 every year of college so you never miss the filing window.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-disc">
+  <div class="footer-disc-box">
+    <i class="ti ti-info-circle fdisc-icon" aria-hidden="true"></i>
+    <p class="fdisc-text">Your College GPS is an independent student-built resource not affiliated with the U.S. Department of Education, Federal Student Aid, or any scholarship organization. Deadlines and award amounts change annually — always verify current information directly at studentaid.gov and each scholarship's official website before applying. &copy; 2026 Your College GPS.</p>
+  </div>
+</div>
+<footer class="footer">
+  <p><a href="welcome.html">Your College GPS</a> &middot; <a href="getting-in.html">Getting in</a> &middot; <a href="ecs.html">Extracurriculars</a> &middot; <a href="essays.html">Essays</a> &middot; 2026</p>
+</footer>
+
+<script>
+function toggleGiMenu(){var b=document.getElementById('gi-btn'),m=document.getElementById('gi-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+function toggleCampusMenu(){var b=document.getElementById('campus-btn'),m=document.getElementById('campus-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+document.addEventListener('click',function(e){
+  ['gi','campus'].forEach(function(id){
+    var dd=document.getElementById('nav-'+id);
+    if(dd&&!dd.contains(e.target)){var b=document.getElementById(id+'-btn'),m=document.getElementById(id+'-menu');if(b)b.classList.remove('open');if(m)m.classList.remove('open');}
+  });
+});
+</script>
+</body>
+</html>

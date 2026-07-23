@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thriving on Campus — Your College GPS</title>
+<meta name="description" content="How to pick professors, navigate add/drop, build your GPA, find internships, use campus resources, and avoid common freshman mistakes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#F7F4EF;--surface:#FFFFFF;--border:#E4DDD3;--border-lt:#EDE8E2;
+  --text:#1A1714;--text-2:#6B6560;--text-3:#9E9891;
+  --accent:#BF4C00;--accent-lt:#FAECE7;--accent-dk:#9A3D00;
+  --font-disp:'Syne',sans-serif;--font-body:'Inter',sans-serif;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.04);
+  --shadow:0 2px 6px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:58px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo{width:38px;height:38px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.nav-name{font-family:var(--font-disp);font-size:15px;font-weight:800;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);text-decoration:none;transition:background .15s,color .15s}
+.nav-link:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:5px;cursor:pointer;border:none;background:none;font-family:var(--font-body);transition:background .15s,color .15s}
+.nav-dropdown-btn:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown-btn.active-dd{font-weight:600;color:var(--accent);background:var(--border-lt)}
+.nav-dropdown-btn i{font-size:12px;transition:transform .2s}
+.nav-dropdown-btn.open i{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,.1);min-width:220px;padding:6px;z-index:300;display:none}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius-sm);text-decoration:none;color:var(--text-2);font-size:13px;transition:background .12s,color .12s}
+.nav-dropdown-item:hover{background:var(--accent-lt);color:var(--accent)}
+.nav-dropdown-item.active-item{color:var(--accent);font-weight:600;background:var(--accent-lt)}
+.nav-dropdown-item i{font-size:15px;color:var(--accent);flex-shrink:0}
+
+/* HERO */
+.hero{max-width:900px;margin:0 auto;padding:4rem 1.5rem 2.5rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:999px;padding:5px 14px;margin-bottom:1.25rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;color:var(--text);margin-bottom:.875rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:16px;color:var(--text-2);line-height:1.7;max-width:580px}
+
+/* NAV ANCHORS */
+.section-nav{max-width:900px;margin:0 auto;padding:0 1.5rem 2rem}
+.section-nav-inner{display:flex;gap:8px;flex-wrap:wrap}
+.snav-btn{font-size:12px;font-weight:500;padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text-2);text-decoration:none;transition:all .15s;display:flex;align-items:center;gap:6px}
+.snav-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-lt)}
+.snav-btn i{font-size:13px}
+
+/* SECTION */
+.content-section{max-width:900px;margin:0 auto;padding:3rem 1.5rem;border-top:1px solid var(--border)}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--text);margin-bottom:.75rem}
+.section-sub{font-size:14px;color:var(--text-2);line-height:1.7;max-width:620px;margin-bottom:1.75rem}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tip-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.tip-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.tip-card h3 i{color:var(--accent);font-size:16px;flex-shrink:0}
+.tip-card p{font-size:12.5px;color:var(--text-2);line-height:1.65}
+
+/* CHECKLIST CARDS */
+.check-list{display:flex;flex-direction:column;gap:8px}
+.check-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.125rem;display:flex;align-items:flex-start;gap:12px}
+.check-dot{width:22px;height:22px;background:var(--accent-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-dot i{font-size:12px;color:var(--accent)}
+.check-body{}
+.check-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.check-desc{font-size:12px;color:var(--text-3);line-height:1.55}
+
+/* MISTAKE CARDS */
+.mistake-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mistake-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;border-left:3px solid #DC2626}
+.mistake-card h3{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:7px}
+.mistake-card h3 i{color:#DC2626;font-size:15px;flex-shrink:0}
+.mistake-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+.fix-box{font-size:11.5px;color:#059669;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:var(--radius-sm);padding:.5rem .75rem;margin-top:.75rem;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.fix-box i{font-size:12px;flex-shrink:0;margin-top:1px}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--border-lt)}
+.tl-item:last-child{border-bottom:none}
+.tl-left{display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0;width:28px}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px}
+.tl-line{width:2px;background:var(--border-lt);flex:1;margin-top:4px}
+.tl-when{font-size:11px;font-weight:600;color:var(--accent);white-space:nowrap;min-width:90px;flex-shrink:0;padding-top:2px}
+.tl-content{}
+.tl-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tl-desc{font-size:12px;color:var(--text-2);line-height:1.55}
+
+/* CTA */
+.cta-section{padding:3rem 1.5rem;text-align:center;max-width:900px;margin:0 auto}
+.cta-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.25rem;box-shadow:var(--shadow)}
+.cta-card h2{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:800;color:var(--text);margin-bottom:.625rem}
+.cta-card p{font-size:13.5px;color:var(--text-2);line-height:1.65;margin-bottom:1.5rem}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:14px;font-weight:600;padding:11px 22px;border-radius:var(--radius-md);text-decoration:none;border:none;cursor:pointer;transition:all .15s}
+.btn-primary{background:var(--accent);color:white}
+.btn-primary:hover{background:var(--accent-dk)}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border);margin-left:8px}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* FOOTER */
+.footer-disc{max-width:900px;margin:0 auto 1rem;padding:0 1.5rem}
+.footer-disc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.875rem 1.125rem;display:flex;align-items:flex-start;gap:9px}
+.fdisc-icon{font-size:15px;color:var(--text-3);flex-shrink:0;margin-top:1px}
+.fdisc-text{font-size:11.5px;color:var(--text-3);line-height:1.65}
+.footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center}
+.footer p{font-size:12px;color:var(--text-3);line-height:1.65}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@media(max-width:640px){
+  .nav-links{display:none}
+  .tips-grid,.mistake-grid{grid-template-columns:1fr}
+  .hero,.content-section,.section-nav,.cta-section,.footer-disc{padding-left:1rem;padding-right:1rem}
+  .tl-item{flex-wrap:wrap}
+  .tl-when{min-width:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="welcome.html">
+    <img class="nav-logo" src="favicon.ico" alt="Your College GPS logo">
+    <span class="nav-name">Your College GPS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="welcome.html" title="Home" style="padding:6px 10px"><i class="ti ti-home" style="font-size:16px;vertical-align:middle" aria-label="Home"></i></a>
+    <a class="nav-link" href="about.html">About us</a>
+    <div class="nav-dropdown" id="nav-gi">
+      <button class="nav-dropdown-btn" onclick="toggleGiMenu()" id="gi-btn">
+        Getting in <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="gi-menu">
+        <a class="nav-dropdown-item" href="sat.html"><i class="ti ti-pencil" aria-hidden="true"></i>SAT Prep</a>
+        <a class="nav-dropdown-item" href="act.html"><i class="ti ti-pencil" aria-hidden="true"></i>ACT Prep</a>
+        <a class="nav-dropdown-item" href="gpa.html"><i class="ti ti-calculator" aria-hidden="true"></i>GPA Calculator</a>
+        <a class="nav-dropdown-item" href="ecs.html"><i class="ti ti-users" aria-hidden="true"></i>Extracurriculars</a>
+        <a class="nav-dropdown-item" href="essays.html"><i class="ti ti-file-text" aria-hidden="true"></i>Essays</a>
+        <a class="nav-dropdown-item" href="financial-aid.html"><i class="ti ti-receipt" aria-hidden="true"></i>Financial Aid</a>
+      </div>
+    </div>
+    <div class="nav-dropdown" id="nav-campus">
+      <button class="nav-dropdown-btn active-dd" onclick="toggleCampusMenu()" id="campus-btn">
+        Thriving on campus <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="campus-menu">
+        <a class="nav-dropdown-item" href="orientation.html"><i class="ti ti-calendar-check" aria-hidden="true"></i>Orientation checklist</a>
+        <a class="nav-dropdown-item active-item" href="campus.html#professors"><i class="ti ti-user" aria-hidden="true"></i>How to pick professors</a>
+        <a class="nav-dropdown-item" href="campus.html#adddrop"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Navigate add/drop</a>
+        <a class="nav-dropdown-item" href="campus.html#gpa"><i class="ti ti-chart-line" aria-hidden="true"></i>Build your GPA</a>
+        <a class="nav-dropdown-item" href="campus.html#internships"><i class="ti ti-briefcase" aria-hidden="true"></i>Find internships</a>
+        <a class="nav-dropdown-item" href="campus.html#resources"><i class="ti ti-building" aria-hidden="true"></i>Campus resources</a>
+        <a class="nav-dropdown-item" href="campus.html#mistakes"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Common freshman mistakes</a>
+      </div>
+    </div>    <a class="nav-link" href="welcome.html#feedback">Feedback</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow"><i class="ti ti-school" aria-hidden="true"></i> Thriving on campus</div>
+  <h1>You got in. Now<br><em>make the most of it.</em></h1>
+  <p>Everything you need to navigate your first year — from picking the right professors to landing your first internship. The things no one tells you until it's too late.</p>
+</header>
+
+<!-- SECTION NAV -->
+<div class="section-nav">
+  <div class="section-nav-inner">
+    <a class="snav-btn" href="#professors"><i class="ti ti-user"></i>Professors</a>
+    <a class="snav-btn" href="#adddrop"><i class="ti ti-arrows-exchange"></i>Add/Drop</a>
+    <a class="snav-btn" href="#gpa"><i class="ti ti-chart-line"></i>GPA</a>
+    <a class="snav-btn" href="#internships"><i class="ti ti-briefcase"></i>Internships</a>
+    <a class="snav-btn" href="#resources"><i class="ti ti-building"></i>Campus resources</a>
+    <a class="snav-btn" href="#mistakes"><i class="ti ti-alert-triangle"></i>Freshman mistakes</a>
+  </div>
+</div>
+
+<!-- PROFESSORS -->
+<section class="content-section" id="professors">
+  <div class="section-eyebrow">Step 1</div>
+  <h2 class="section-title">How to pick professors</h2>
+  <p class="section-sub">The professor matters more than the time slot. A great professor can make a hard class manageable. A poor one can make an easy class miserable. Here is how to research before you register.</p>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h3><i class="ti ti-star" aria-hidden="true"></i>Start with RateMyProfessors</h3>
+      <p>Go to ratemyprofessors.com and search your school. Read the reviews critically — look for patterns across multiple students, not just one or two outliers. Pay attention to comments about clarity, grading fairness, and how available they are outside class.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-file-description" aria-hidden="true"></i>Check your school's own evaluations</h3>
+      <p>Most universities publish student course evaluations through their own portal (UT Austin calls it CIS, other schools have similar systems). These are more structured and reliable than third-party sites. Search your school's name plus "course instructor survey" or "student evaluations."</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-users" aria-hidden="true"></i>Ask current students directly</h3>
+      <p>Reddit communities for your school (search r/UTDallas, r/UTAustin, etc.) are full of honest, recent professor reviews. Ask specifically about the class you are taking — a professor great for 200-level may be brutal at 300-level.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-calendar" aria-hidden="true"></i>Attend the first class before committing</h3>
+      <p>Most schools allow you to attend a class during add/drop without being enrolled. Go to the first session of any class you are unsure about before the deadline. You will know within 20 minutes whether the professor's style works for you.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-book" aria-hidden="true"></i>Read the syllabus before registering</h3>
+      <p>Many professors post their syllabi online before the semester starts. Search your school's course schedule for a syllabus link, or email the department. Knowing the grading breakdown and workload before you register is a significant advantage.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-alert-circle" aria-hidden="true"></i>Grade distribution matters</h3>
+      <p>Some schools publish historical grade distributions by professor and course. Search your school's name plus "grade distribution" — UT Austin, Texas A&M, and several others make this public. A class with 80% A's and B's and one with 30% is a very different experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADD/DROP -->
+<section class="content-section" id="adddrop">
+  <div class="section-eyebrow">Step 2</div>
+  <h2 class="section-title">Navigate add/drop</h2>
+  <p class="section-sub">Add/drop is the window at the start of each semester when you can change your schedule without academic penalty. Knowing exactly when it opens and closes — and how to use it strategically — is one of the most valuable things you can know as a freshman.</p>
+  <div class="check-list">
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-clock" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Find your school's exact add/drop deadline — it varies</div>
+        <div class="check-desc">Most schools have a short add/drop window of 5–12 business days after the first day of class. After that, dropping a course may result in a "W" (withdrawal) on your transcript, a partial refund, or no refund at all. This date lives in your school's academic calendar — know it before the semester starts.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-eye" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Use the first week to shop classes, not just attend them</div>
+        <div class="check-desc">The first week of class is your free trial period. Attend the first session of any class you are on the fence about — even if you are not yet enrolled or are on a waitlist. Most professors allow this, and many waitlisted students get a spot by showing up in person and talking to the professor directly.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-replace" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Add before you drop — don't accidentally go below full-time</div>
+        <div class="check-desc">If you need to swap courses, add the new one first before dropping the old one. Dropping below full-time status (typically 12 credit hours) can affect your financial aid, health insurance coverage under a parent's plan, and housing eligibility. Check your specific aid requirements before making any schedule change.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-mail" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Email the professor to get off a waitlist</div>
+        <div class="check-desc">If a course you need is full, email the professor directly — not just the department. Introduce yourself, explain why you need the course, and ask if they anticipate any spots opening. Attend the first class in person regardless. Waitlists often clear during add/drop as students swap schedules, and professors have discretion to add students directly in many cases.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-alert-triangle" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">A late withdrawal looks different than never enrolling</div>
+        <div class="check-desc">A "W" on your transcript is not the end of the world, but too many raise flags for graduate schools and competitive internship programs. One W for a genuine reason is fine. Four W's across two years tells a different story. Withdraw if you need to — but be intentional about it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GPA -->
+<section class="content-section" id="gpa">
+  <div class="section-eyebrow">Step 3</div>
+  <h2 class="section-title">Build and protect your GPA</h2>
+  <p class="section-sub">Your freshman year GPA sets the foundation for everything after it — transfer applications, graduate school, scholarships, and internships. Here is how to approach it strategically from day one.</p>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h3><i class="ti ti-target" aria-hidden="true"></i>Know your major's GPA floor</h3>
+      <p>Most competitive programs have a minimum GPA to stay in the major — business, nursing, and engineering schools are especially strict. Know yours before the semester starts, not when you get your first grade back. Talk to your advisor in the first two weeks.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-trending-up" aria-hidden="true"></i>Front-load your easy courses</h3>
+      <p>Freshman year is the hardest transition academically. If you have flexibility in your schedule, lean toward courses you are genuinely stronger in during your first semester. A strong GPA early gives you cushion for harder upper-division courses later.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-help-circle" aria-hidden="true"></i>Go to office hours before you need to</h3>
+      <p>Most students only go to office hours when they are already struggling. Go during the first two weeks when you do not need anything specific. Introduce yourself. When grades become important, professors remember the students who showed up early — and that relationship matters.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-clock" aria-hidden="true"></i>Treat studying like a job</h3>
+      <p>College professors typically expect 2–3 hours of work outside class for every hour in class. A 15-credit semester means roughly 30–45 hours per week of study time on top of class time. Build that into your schedule from week one instead of catching up on week eight.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-school" aria-hidden="true"></i>Use the tutoring center — it is free</h3>
+      <p>Every college has a free tutoring center that most students never visit. For STEM courses especially, regular tutoring sessions can be the difference between a B and an A. Go before an exam, not the night before. Walk in, find out what subjects are covered, and schedule a session in the first month.</p>
+    </div>
+    <div class="tip-card">
+      <h3><i class="ti ti-calculator" aria-hidden="true"></i>Track your GPA in real time</h3>
+      <p>Use our GPA calculator to understand exactly where you stand at any point in the semester. Knowing that a B on the next exam drops you from a 3.7 to a 3.4 is much more motivating than just knowing you "need to do better."</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNSHIPS -->
+<section class="content-section" id="internships">
+  <div class="section-eyebrow">Step 4</div>
+  <h2 class="section-title">Find internships — earlier than you think</h2>
+  <p class="section-sub">Most freshmen assume internships are for juniors. They are not. Freshman and sophomore internships exist, and students who start early graduate with a full work history. Here is how to approach the timeline.</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-when">September</div>
+      <div class="tl-content">
+        <div class="tl-title">Set up LinkedIn and clean up your resume</div>
+        <div class="tl-desc">You do not need work experience to have a LinkedIn profile. Add your school, your major, any clubs you have joined, and a professional photo. Your school's career center will review your resume for free — go during the first month, not right before an application deadline.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">October</div>
+      <div class="tl-content">
+        <div class="tl-title">Attend every career fair — even as a freshman</div>
+        <div class="tl-desc">Most campus career fairs happen in September and October. Go even if you are not ready to apply anywhere. Introduce yourself, take business cards, and practice your pitch. Recruiters remember faces — showing up as a freshman and returning as a junior is a powerful narrative.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">November</div>
+      <div class="tl-content">
+        <div class="tl-title">Apply for summer internships — they open earlier than you expect</div>
+        <div class="tl-desc">Large company summer internship applications open in September and October for the following summer. Many freshmen miss this entirely. Start watching LinkedIn, Handshake (your school's internship portal), and company career pages in October. Competitive programs fill months before the summer.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">January</div>
+      <div class="tl-content">
+        <div class="tl-title">Cold email professors for research opportunities</div>
+        <div class="tl-desc">Research assistant positions are one of the most overlooked early-career opportunities. Email 4–6 professors in your department whose work interests you. Keep it brief: who you are, what you find interesting about their research, and that you would like to help. Three or four will ignore you. One or two will say yes — and a research role changes your resume completely.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Spring</div>
+      <div class="tl-content">
+        <div class="tl-title">Apply for local and small company internships</div>
+        <div class="tl-desc">Large companies often require sophomore status or above. Local businesses, startups, and nonprofits hire freshmen regularly and often provide more meaningful hands-on work. Use your school's Handshake portal, LinkedIn's "Easy Apply" filter, and your own network. Your first internship does not have to be at a Fortune 500 company — it just has to be something.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPUS RESOURCES -->
+<section class="content-section" id="resources">
+  <div class="section-eyebrow">Step 5</div>
+  <h2 class="section-title">Campus resources most students never use</h2>
+  <p class="section-sub">You are already paying for these through tuition and fees. The students who use them consistently have a measurable advantage over those who do not.</p>
+  <div class="check-list">
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-briefcase" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Career center</div>
+        <div class="check-desc">Free resume reviews, mock interviews, internship and job postings through Handshake, and recruiter connections. Most students visit once before graduation. The students who visit every semester have consistently stronger outcomes. Walk in during the first month of freshman year.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-pencil" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Writing center</div>
+        <div class="check-desc">Free one-on-one feedback on any paper before you submit it. Not just for struggling writers — strong writers use writing centers too, because an outside eye always catches something. Book appointments at least 48 hours in advance; they fill up before major deadlines.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-math" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Tutoring and academic support centers</div>
+        <div class="check-desc">Free tutoring for math, science, writing, and often major-specific subjects. Drop-in and scheduled appointments both available at most schools. Go before you are struggling, not after your first bad grade.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Counseling center</div>
+        <div class="check-desc">Free or low-cost mental health support. Waitlists can be several weeks long at large schools — register early in the semester even if you do not need immediate support, so you are already in the system if you do later. Freshman year is one of the most common times students experience anxiety and burnout.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-building-library" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Library research services</div>
+        <div class="check-desc">Librarians are research specialists and will help you find sources, navigate academic databases, and structure a research paper for free. Most students use the library only to print things or find a quiet seat. Research librarians are one of the most underused resources on campus.</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot"><i class="ti ti-device-laptop" aria-hidden="true"></i></div>
+      <div class="check-body">
+        <div class="check-title">Free software through your school</div>
+        <div class="check-desc">Most universities provide free access to Microsoft 365, Adobe Creative Cloud, MATLAB, SPSS, and other professional tools through your student email. Check your school's IT or software licensing page — students spend hundreds of dollars on software they could have gotten free.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISTAKES -->
+<section class="content-section" id="mistakes">
+  <div class="section-eyebrow">Step 6</div>
+  <h2 class="section-title">Common freshman mistakes — and how to avoid them</h2>
+  <p class="section-sub">These are not edge cases. Every single one of these happens to a large percentage of freshmen every year.</p>
+  <div class="mistake-grid">
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Skipping class "just once"</h3>
+      <p>College professors often do not take attendance. That makes it easy to justify skipping — until you have missed three weeks without realizing it. Missing one lecture in a fast-moving course can take 4–5 hours to self-teach.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Treat every class like a meeting with your boss. You can miss some, but not without a plan for catching up the same day.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Waiting until finals to study</h3>
+      <p>College exams cover more material at a deeper level than high school tests. Cramming the night before works poorly even in high school — in college it often fails completely.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Review notes the same day as each class. It takes 15 minutes per class and dramatically improves retention before any studying even starts.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Not reading the syllabus</h3>
+      <p>The syllabus contains every deadline, grading breakdown, late policy, and exam date. Most students glance at it on day one and never open it again — then miss a deadline they "didn't know about."</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>On the first day of every class, transfer every deadline from every syllabus into your phone calendar. All of them, in one sitting.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Taking 18 credits the first semester</h3>
+      <p>Overloading in freshman year is one of the most common GPA killers. The jump in difficulty from high school to college is real — adding extra courses on top makes it worse.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Take 15 credits your first semester unless you have a specific reason not to. You can always add more once you know how college-level workloads actually feel.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Never going to office hours</h3>
+      <p>Office hours exist for one reason: so professors can help you. Most students never show up. The ones who do get better explanations, earlier warning about exam topics, and a professor who actually knows their name.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Go to every professor's office hours at least once in the first month. Even if you have no specific question — say hello and introduce yourself.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Ignoring your email for weeks</h3>
+      <p>Financial aid holds, registration blocks, scholarship deadlines, and professor announcements all go to your student email. Students who do not check it miss things that cost them money and opportunities.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Set up your student email on your phone and check it every morning. It takes 90 seconds and prevents a significant number of avoidable problems.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-card">
+    <h2>Starting before classes? Check your orientation list.</h2>
+    <p>Before any of this applies, you need to get through orientation. See your school's specific checklist with real 2026 dates.</p>
+    <a class="btn btn-primary" href="orientation.html"><i class="ti ti-map-pin" aria-hidden="true"></i>Open orientation checklist</a>
+    <a class="btn btn-ghost" href="gpa.html">GPA calculator</a>
+  </div>
+</section>
+
+<div class="footer-disc">
+  <div class="footer-disc-box">
+    <i class="ti ti-info-circle fdisc-icon" aria-hidden="true"></i>
+    <p class="fdisc-text"><strong>Disclaimer:</strong> Your College GPS is an independent student-built resource not affiliated with or endorsed by any university. Advice is general in nature — specific policies on add/drop, GPA minimums, and campus resources vary by school. Always verify details with your academic advisor or registrar. &copy; 2026 Your College GPS.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="welcome.html">Your College GPS</a> · <a href="getting-in.html">Getting in</a> · <a href="about.html">About us</a> · Not affiliated with any university · 2026</p>
+</footer>
+
+<script>
+function toggleGiMenu(){
+  var btn=document.getElementById('gi-btn');
+  var menu=document.getElementById('gi-menu');
+  if(!btn||!menu)return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function toggleCampusMenu(){
+  var btn=document.getElementById('campus-btn');
+  var menu=document.getElementById('campus-menu');
+  if(!btn||!menu)return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  ['gi','campus'].forEach(function(id){
+    var dd=document.getElementById('nav-'+id);
+    if(dd&&!dd.contains(e.target)){
+      var b=document.getElementById(id+'-btn');
+      var m=document.getElementById(id+'-menu');
+      if(b)b.classList.remove('open');
+      if(m)m.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

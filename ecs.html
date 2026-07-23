@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extracurricular Planning — Your College GPS</title>
+<meta name="description" content="How to build a standout extracurricular profile for college applications. What colleges actually look for, the most impactful activity categories, and how to present them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#F7F4EF;--surface:#FFFFFF;--border:#E4DDD3;--border-lt:#EDE8E2;
+  --text:#1A1714;--text-2:#6B6560;--text-3:#9E9891;
+  --accent:#BF4C00;--accent-lt:#FAECE7;--accent-dk:#9A3D00;
+  --font-disp:'Syne',sans-serif;--font-body:'Inter',sans-serif;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.04);
+  --shadow:0 2px 6px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:58px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-logo{width:38px;height:38px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.nav-name{font-family:var(--font-disp);font-size:15px;font-weight:800;color:var(--text)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);text-decoration:none;transition:background .15s,color .15s}
+.nav-link:hover{background:var(--border-lt);color:var(--text)}
+.nav-dropdown{position:relative}
+.nav-dropdown-btn{font-size:13px;color:var(--text-2);padding:6px 12px;border-radius:var(--radius-sm);display:flex;align-items:center;gap:5px;cursor:pointer;border:none;background:none;font-family:var(--font-body);transition:background .15s,color .15s}
+.nav-dropdown-btn:hover,.nav-dropdown-btn.active-dd{background:var(--border-lt);color:var(--text)}
+.nav-dropdown-btn.active-dd{font-weight:600;color:var(--accent)}
+.nav-dropdown-btn i.ti-chevron-down{font-size:12px;transition:transform .2s}
+.nav-dropdown-btn.open i.ti-chevron-down{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:0 4px 20px rgba(0,0,0,.1);min-width:220px;padding:6px;z-index:300;display:none}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius-sm);text-decoration:none;color:var(--text-2);font-size:13px;transition:background .12s,color .12s}
+.nav-dropdown-item:hover{background:var(--accent-lt);color:var(--accent)}
+.nav-dropdown-item.active-item{color:var(--accent);font-weight:600;background:var(--accent-lt)}
+.nav-dropdown-item i{font-size:15px;color:var(--accent);flex-shrink:0}
+
+.hero{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 2rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:999px;padding:5px 14px;margin-bottom:1.25rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,42px);font-weight:800;color:var(--text);line-height:1.1;margin-bottom:.875rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:15px;color:var(--text-2);line-height:1.7;max-width:600px}
+
+.content{max-width:900px;margin:0 auto;padding:0 1.5rem 4rem}
+
+.section-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;margin-top:3rem}
+.section-label:first-child{margin-top:0}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--text);margin-bottom:.75rem}
+.section-sub{font-size:14px;color:var(--text-2);line-height:1.7;max-width:640px;margin-bottom:1.75rem}
+
+/* STAT CALLOUT */
+.stat-callout{background:var(--accent-lt);border:1px solid #F0C4B0;border-radius:var(--radius-lg);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.stat-num{font-family:var(--font-disp);font-size:36px;font-weight:800;color:var(--accent);flex-shrink:0;line-height:1}
+.stat-text{font-size:13px;color:var(--accent-dk);line-height:1.55}
+
+/* TIER CARDS */
+.tier-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.tier-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+.tier-header{display:flex;align-items:center;gap:10px;margin-bottom:.875rem}
+.tier-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tier-icon i{font-size:18px}
+.tier-title{font-size:14px;font-weight:700;color:var(--text)}
+.tier-sub{font-size:11px;color:var(--text-3);margin-top:1px}
+.tier-items{display:flex;flex-direction:column;gap:5px}
+.tier-item{font-size:12.5px;color:var(--text-2);line-height:1.5;padding-left:1rem;position:relative}
+.tier-item::before{content:'•';position:absolute;left:0;color:var(--accent)}
+
+/* PRINCIPLES */
+.principles{display:flex;flex-direction:column;gap:10px;margin-bottom:2rem}
+.principle{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.125rem;display:flex;gap:14px;align-items:flex-start}
+.principle-icon{width:32px;height:32px;background:var(--accent-lt);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.principle-icon i{font-size:16px;color:var(--accent)}
+.principle-title{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:4px}
+.principle-desc{font-size:12.5px;color:var(--text-2);line-height:1.6}
+
+/* COMMON APP ACTIVITY GUIDE */
+.activity-guide{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem}
+.ag-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.ag-title i{color:var(--accent)}
+.ag-steps{display:flex;flex-direction:column;gap:.875rem}
+.ag-step{display:flex;gap:12px;align-items:flex-start}
+.ag-num{width:24px;height:24px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;flex-shrink:0;margin-top:1px}
+.ag-body{}
+.ag-step-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.ag-step-desc{font-size:12px;color:var(--text-3);line-height:1.55}
+
+/* MISTAKES */
+.mistake-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:2rem}
+.mistake-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;border-left:3px solid #DC2626}
+.mistake-card h3{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:7px}
+.mistake-card h3 i{color:#DC2626;font-size:15px;flex-shrink:0}
+.mistake-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+.fix-box{font-size:11.5px;color:#059669;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:var(--radius-sm);padding:.5rem .75rem;margin-top:.75rem;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.fix-box i{font-size:12px;flex-shrink:0;margin-top:1px}
+
+.footer-disc{max-width:900px;margin:0 auto 1rem;padding:0 1.5rem}
+.footer-disc-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.875rem 1.125rem;display:flex;align-items:flex-start;gap:9px}
+.fdisc-icon{font-size:15px;color:var(--text-3);flex-shrink:0;margin-top:1px}
+.fdisc-text{font-size:11.5px;color:var(--text-3);line-height:1.65}
+.footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center}
+.footer p{font-size:12px;color:var(--text-3)}
+.footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:640px){
+  .nav-links{display:none}
+  .tier-grid,.mistake-grid{grid-template-columns:1fr}
+  .hero,.content,.footer-disc{padding-left:1rem;padding-right:1rem}
+  .stat-callout{flex-direction:column;gap:.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="welcome.html">
+    <img class="nav-logo" src="favicon.ico" alt="Your College GPS logo">
+    <span class="nav-name">Your College GPS</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="welcome.html" title="Home" style="padding:6px 10px"><i class="ti ti-home" style="font-size:16px;vertical-align:middle" aria-label="Home"></i></a>
+    <a class="nav-link" href="about.html">About us</a>
+    <div class="nav-dropdown" id="nav-gi">
+      <button class="nav-dropdown-btn active-dd" onclick="toggleGiMenu()" id="gi-btn">
+        Getting in <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="gi-menu">
+        <a class="nav-dropdown-item" href="sat.html"><i class="ti ti-pencil" aria-hidden="true"></i>SAT Prep</a>
+        <a class="nav-dropdown-item" href="act.html"><i class="ti ti-pencil" aria-hidden="true"></i>ACT Prep</a>
+        <a class="nav-dropdown-item" href="gpa.html"><i class="ti ti-calculator" aria-hidden="true"></i>GPA Calculator</a>
+        <a class="nav-dropdown-item active-item" href="ecs.html"><i class="ti ti-users" aria-hidden="true"></i>Extracurriculars</a>
+        <a class="nav-dropdown-item" href="essays.html"><i class="ti ti-file-text" aria-hidden="true"></i>Essays</a>
+        <a class="nav-dropdown-item" href="financial-aid.html"><i class="ti ti-receipt" aria-hidden="true"></i>Financial Aid</a>
+      </div>
+    </div>
+    <div class="nav-dropdown" id="nav-campus">
+      <button class="nav-dropdown-btn" onclick="toggleCampusMenu()" id="campus-btn">
+        Thriving on campus <i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-menu" id="campus-menu">
+        <a class="nav-dropdown-item" href="orientation.html"><i class="ti ti-calendar-check" aria-hidden="true"></i>Orientation checklist</a>
+        <a class="nav-dropdown-item" href="professors.html"><i class="ti ti-user" aria-hidden="true"></i>How to pick professors</a>
+        <a class="nav-dropdown-item" href="adddrop.html"><i class="ti ti-arrows-exchange" aria-hidden="true"></i>Navigate add/drop</a>
+        <a class="nav-dropdown-item" href="build-gpa.html"><i class="ti ti-chart-line" aria-hidden="true"></i>Build your GPA</a>
+        <a class="nav-dropdown-item" href="internships.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Find internships</a>
+        <a class="nav-dropdown-item" href="campus-resources.html"><i class="ti ti-building" aria-hidden="true"></i>Campus resources</a>
+        <a class="nav-dropdown-item" href="mistakes.html"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Common freshman mistakes</a>
+      </div>
+    </div>    <a class="nav-link" href="welcome.html#feedback">Feedback</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-eyebrow"><i class="ti ti-users" aria-hidden="true"></i> Getting into college</div>
+  <h1>Build a standout <em>extracurricular profile.</em></h1>
+  <p>Your activities tell colleges who you are outside the classroom. They show leadership, commitment, and character — things grades and test scores can't fully capture. Here's how to build a profile that actually stands out.</p>
+</header>
+
+<div class="content">
+
+  <!-- WHAT COLLEGES ACTUALLY LOOK FOR -->
+  <div class="section-label">The truth about ECs</div>
+  <h2 class="section-title">What colleges are actually looking for</h2>
+  <p class="section-sub">In a 2023 survey by the National Association for College Admission Counseling, over 51% of colleges rated extracurricular activities as moderately or considerably important to their admissions decisions. But the way most students approach ECs is completely backwards.</p>
+
+  <div class="stat-callout">
+    <div class="stat-num">51%</div>
+    <p class="stat-text">of colleges surveyed by NACAC rate extracurricular activities as "moderately" or "considerably" important to admissions decisions. At selective schools, that number is even higher — and the weight shifts dramatically toward leadership, impact, and commitment over participation alone.</p>
+  </div>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="principle-icon"><i class="ti ti-target" aria-hidden="true"></i></div>
+      <div>
+        <div class="principle-title">Depth beats breadth</div>
+        <div class="principle-desc">Admissions officers are not counting how many clubs you joined. They are looking for sustained commitment and genuine growth. Three or four activities you have dedicated real time to over multiple years are worth far more than ten clubs you listed for the sake of filling a page. Depth of involvement signals that you will bring that same commitment to college.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="principle-icon"><i class="ti ti-trending-up" aria-hidden="true"></i></div>
+      <div>
+        <div class="principle-title">Leadership and impact matter more than the activity itself</div>
+        <div class="principle-desc">Playing varsity soccer is fine. Being elected captain and leading your team to a regional championship is a different kind of entry. Founding a club is more impressive than joining one. Starting something, leading something, or measurably improving something shows initiative — one of the qualities colleges most want to see.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="principle-icon"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      <div>
+        <div class="principle-title">Authenticity over prestige</div>
+        <div class="principle-desc">Colleges can tell when a student joined Model UN because they thought it would look good versus because they are genuinely passionate about international policy. Choose activities that align with your actual interests. Your enthusiasm shows through in your essays, interviews, and the way you describe your experiences — and it makes your entire application more cohesive.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="principle-icon"><i class="ti ti-puzzle" aria-hidden="true"></i></div>
+      <div>
+        <div class="principle-title">Your activities should tell a story</div>
+        <div class="principle-desc">The strongest applications have a through-line. Your ECs, your essay, your intended major, and your goals should feel like they come from the same person with a coherent set of interests and values. An aspiring engineer who does robotics, tutors math, and volunteers at a science camp tells a cleaner story than a student with activities scattered across a dozen unrelated categories.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="principle-icon"><i class="ti ti-briefcase" aria-hidden="true"></i></div>
+      <div>
+        <div class="principle-title">Jobs and family responsibilities count</div>
+        <div class="principle-desc">If you worked part-time to help support your family, cared for a sibling, or ran a small business, those belong on your activity list. Admissions officers understand that not every student has access to the same opportunities — and demonstrating responsibility, work ethic, and real-world experience is often more impressive than another club membership.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="section-label">Activity categories</div>
+  <h2 class="section-title">The most impactful types of extracurriculars</h2>
+  <p class="section-sub">These are the categories that consistently resonate with admissions committees — not because they are prestigious, but because they tend to demonstrate the qualities colleges actually value.</p>
+
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="tier-header">
+        <div class="tier-icon" style="background:#EFF6FF"><i class="ti ti-crown" style="color:#1D4ED8" aria-hidden="true"></i></div>
+        <div><div class="tier-title">Leadership roles</div><div class="tier-sub">Consistently rated highest by admissions officers</div></div>
+      </div>
+      <div class="tier-items">
+        <div class="tier-item">Student government (president, class officer, committee chair)</div>
+        <div class="tier-item">Team captain or co-captain in any sport</div>
+        <div class="tier-item">Club president or founding member</div>
+        <div class="tier-item">Editor-in-chief of school newspaper or yearbook</div>
+        <div class="tier-item">Eagle Scout or Gold Award (Girl Scouts)</div>
+        <div class="tier-item">Camp counselor or youth program leader</div>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-header">
+        <div class="tier-icon" style="background:#F0FDF4"><i class="ti ti-heart" style="color:#16A34A" aria-hidden="true"></i></div>
+        <div><div class="tier-title">Community service</div><div class="tier-sub">Long-term commitment shows compassion and social awareness</div></div>
+      </div>
+      <div class="tier-items">
+        <div class="tier-item">Volunteer work with sustained weekly commitment</div>
+        <div class="tier-item">Organizing service projects or fundraising campaigns</div>
+        <div class="tier-item">Hospital, hospice, or healthcare volunteering</div>
+        <div class="tier-item">Tutoring underserved students in your community</div>
+        <div class="tier-item">Environmental or conservation projects</div>
+        <div class="tier-item">Nonprofit internships or coordination roles</div>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-header">
+        <div class="tier-icon" style="background:#FDF4FF"><i class="ti ti-microscope" style="color:#9333EA" aria-hidden="true"></i></div>
+        <div><div class="tier-title">Academic & research activities</div><div class="tier-sub">Shows intellectual initiative beyond the classroom</div></div>
+      </div>
+      <div class="tier-items">
+        <div class="tier-item">Science Olympiad, Math Olympiad, or Quiz Bowl</div>
+        <div class="tier-item">Debate team (especially competitive circuit debate)</div>
+        <div class="tier-item">Independent research with a professor or mentor</div>
+        <div class="tier-item">Science fair projects submitted to regional or state competitions</div>
+        <div class="tier-item">Model United Nations</div>
+        <div class="tier-item">Academic summer programs (especially selective ones)</div>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-header">
+        <div class="tier-icon" style="background:#FEFCE8"><i class="ti ti-music" style="color:#CA8A04" aria-hidden="true"></i></div>
+        <div><div class="tier-title">Arts & performance</div><div class="tier-sub">Demonstrates creativity and sustained dedication</div></div>
+      </div>
+      <div class="tier-items">
+        <div class="tier-item">Orchestra, band, or choir — especially with solos or competitions</div>
+        <div class="tier-item">Theater and drama — production roles and acting parts</div>
+        <div class="tier-item">Visual art with a portfolio or exhibition history</div>
+        <div class="tier-item">Dance, including competitive or company-level experience</div>
+        <div class="tier-item">Film, photography, or graphic design with actual published work</div>
+        <div class="tier-item">Creative writing — especially published or award-winning work</div>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-header">
+        <div class="tier-icon" style="background:#FFF7ED"><i class="ti ti-device-laptop" style="color:#EA580C" aria-hidden="true"></i></div>
+        <div><div class="tier-title">Entrepreneurship & innovation</div><div class="tier-sub">Founding something is one of the strongest signals of initiative</div></div>
+      </div>
+      <div class="tier-items">
+        <div class="tier-item">Starting a small business or service (tutoring, lawn care, design)</div>
+        <div class="tier-item">Founding or co-founding a student organization</div>
+        <div class="tier-item">Building an app, website, or software project with real users</div>
+        <div class="tier-item">Participating in startup competitions or hackathons</div>
+        <div class="tier-item">Launching a social media channel or publication with an audience</div>
+        <div class="tier-item">Self-publishing a book, podcast, or content platform</div>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-header">
+        <div class="tier-icon" style="background:#F0FDF4"><i class="ti ti-run" style="color:#16A34A" aria-hidden="true"></i></div>
+        <div><div class="tier-title">Athletics</div><div class="tier-sub">Long-term commitment and teamwork — leadership elevates it</div></div>
+      </div>
+      <div class="tier-items">
+        <div class="tier-item">Varsity sports — especially with leadership roles</div>
+        <div class="tier-item">Club or travel sports at a competitive level</div>
+        <div class="tier-item">Individual sports (tennis, golf, swimming, wrestling) with rankings</div>
+        <div class="tier-item">Team captaincy or coaching younger athletes</div>
+        <div class="tier-item">Documenting athletic achievements with specific stats or placements</div>
+        <div class="tier-item">Balancing a demanding sport with strong academics shows discipline</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMON APP ACTIVITY LIST -->
+  <div class="section-label">How to list your activities</div>
+  <h2 class="section-title">Writing your Common App activity list</h2>
+  <p class="section-sub">The Common App gives you space for up to 10 activities, each with a 150-character description. 150 characters is tight. Every word has to earn its place. Here is how to make the most of it.</p>
+
+  <div class="activity-guide">
+    <div class="ag-title"><i class="ti ti-list-check" aria-hidden="true"></i> How to write a strong 150-character activity description</div>
+    <div class="ag-steps">
+      <div class="ag-step">
+        <div class="ag-num">1</div>
+        <div class="ag-body">
+          <div class="ag-step-title">Lead with what you did, not the club's name or mission</div>
+          <div class="ag-step-desc">Bad: "Member of the National Honor Society, which recognizes academic achievement." Good: "Selected for academic excellence; tutored 12 underclassmen weekly in math and science."</div>
+        </div>
+      </div>
+      <div class="ag-step">
+        <div class="ag-num">2</div>
+        <div class="ag-body">
+          <div class="ag-step-title">Include numbers and specifics whenever possible</div>
+          <div class="ag-step-desc">Quantify your impact: how many people you led, how much money you raised, how many hours per week you committed, what place you finished. "Raised $4,200 for local food bank" beats "fundraising for charity" every time.</div>
+        </div>
+      </div>
+      <div class="ag-step">
+        <div class="ag-num">3</div>
+        <div class="ag-body">
+          <div class="ag-step-title">List in order of importance to you, not chronologically</div>
+          <div class="ag-step-desc">Put your most meaningful or impressive activity first. Admissions officers read quickly — the top of your list gets the most attention. Your number-one slot should reflect what matters most to you or where you had the greatest impact.</div>
+        </div>
+      </div>
+      <div class="ag-step">
+        <div class="ag-num">4</div>
+        <div class="ag-body">
+          <div class="ag-step-title">Include hours per week and weeks per year accurately</div>
+          <div class="ag-step-desc">Common App asks for both. Be honest but thorough — include travel time for sports, practice time, and preparation time, not just the activity itself. Underreporting makes strong commitments look casual.</div>
+        </div>
+      </div>
+      <div class="ag-step">
+        <div class="ag-num">5</div>
+        <div class="ag-body">
+          <div class="ag-step-title">Use the Additional Information section for overflow</div>
+          <div class="ag-step-desc">If you have more than 10 activities or need more than 150 characters to describe a particularly important one, use the 650-word Additional Information section. This is also where you can explain unusual circumstances — like why you only participated in something for one year.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISTAKES -->
+  <div class="section-label">What to avoid</div>
+  <h2 class="section-title">Common extracurricular mistakes</h2>
+  <div class="mistake-grid">
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Joining clubs just to add them to the list</h3>
+      <p>Admissions officers read thousands of applications. They can tell when a student joined something in senior year solely to check a box. A club you attended three meetings of is not a meaningful extracurricular.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Only list activities you actually participated in meaningfully and consistently. Three genuine activities beat ten superficial ones.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Listing memberships without noting what you actually did</h3>
+      <p>Being a "member" of a club says almost nothing. What did you contribute? What role did you play? Did you organize anything, present anything, or lead anyone?</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Always describe what you did within the activity, not just that you participated. Use action verbs: led, founded, organized, coached, designed, raised.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Quitting activities to "focus on grades"</h3>
+      <p>Colleges want to see sustained commitment. Dropping activities because they became inconvenient signals that you give up when things get hard — exactly the opposite of what admissions officers want to see.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Choose fewer activities if needed, but commit to them for multiple years. Longevity is a signal of character.</div>
+    </div>
+    <div class="mistake-card">
+      <h3><i class="ti ti-x" aria-hidden="true"></i>Starting everything junior year</h3>
+      <p>A spike of activity in junior year right before applications looks calculated. Colleges look at the full four years of high school, and a sudden burst of involvement in year three stands out for the wrong reasons.</p>
+      <div class="fix-box"><i class="ti ti-check" aria-hidden="true"></i>Start freshman or sophomore year. Even two or three years of commitment in a single activity is far stronger than six months of frantic involvement in many.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-disc">
+  <div class="footer-disc-box">
+    <i class="ti ti-info-circle fdisc-icon" aria-hidden="true"></i>
+    <p class="fdisc-text">Your College GPS is an independent student-built resource not affiliated with the Common App, any college, or any admissions organization. NACAC survey data sourced from publicly available 2023 research. Admissions criteria vary by school — always check each school's specific guidance. &copy; 2026 Your College GPS.</p>
+  </div>
+</div>
+<footer class="footer">
+  <p><a href="welcome.html">Your College GPS</a> &middot; <a href="getting-in.html">Getting in</a> &middot; <a href="essays.html">Essays</a> &middot; <a href="financial-aid.html">Financial Aid</a> &middot; 2026</p>
+</footer>
+
+<script>
+function toggleGiMenu(){var b=document.getElementById('gi-btn'),m=document.getElementById('gi-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+function toggleCampusMenu(){var b=document.getElementById('campus-btn'),m=document.getElementById('campus-menu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+document.addEventListener('click',function(e){
+  ['gi','campus'].forEach(function(id){
+    var dd=document.getElementById('nav-'+id);
+    if(dd&&!dd.contains(e.target)){var b=document.getElementById(id+'-btn'),m=document.getElementById(id+'-menu');if(b)b.classList.remove('open');if(m)m.classList.remove('open');}
+  });
+});
+</script>
+</body>
+</html>
